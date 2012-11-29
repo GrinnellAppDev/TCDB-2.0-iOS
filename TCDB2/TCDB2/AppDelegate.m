@@ -19,7 +19,7 @@
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     
     // prepare view controllers
-    UIViewController* leftController = [[UIViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    UIViewController* leftController = [[UIViewController alloc] init];
     
     self.deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.viewController leftViewController:leftController rightViewController:nil];
     
