@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IIViewDeckController.h"
 
 @class ViewController;
 
@@ -15,5 +16,5 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) ViewController *viewController;
-
+@property (strong, nonatomic) IIViewDeckController* deckController;
 @end

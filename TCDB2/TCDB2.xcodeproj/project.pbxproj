@@ -17,13 +17,15 @@
 		3B81D043166700B500AB5269 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D042166700B500AB5269 /* Default@2x.png */; };
 		3B81D045166700B500AB5269 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D044166700B500AB5269 /* Default-568h@2x.png */; };
 		3B81D048166700B500AB5269 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B81D047166700B500AB5269 /* ViewController.m */; };
-		3B81D04B166700B500AB5269 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D049166700B500AB5269 /* ViewController_iPhone.xib */; };
-		3B81D04E166700B500AB5269 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D04C166700B500AB5269 /* ViewController_iPad.xib */; };
+		3B81D04B166700B500AB5269 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D049166700B500AB5269 /* ViewController.xib */; };
 		3B81D055166704B800AB5269 /* Calendar-Week.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D054166704B800AB5269 /* Calendar-Week.png */; };
 		3B81D0571667050300AB5269 /* appbar.phonebook.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D0561667050300AB5269 /* appbar.phonebook.rest.png */; };
 		3B81D05B1667056C00AB5269 /* appbar.time.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D05A1667056C00AB5269 /* appbar.time.rest.png */; };
 		3B81D05D1667063A00AB5269 /* appbar.pin.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D05C1667063A00AB5269 /* appbar.pin.rest.png */; };
 		3B81D0611667066C00AB5269 /* appbar.numberlist.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D0601667066C00AB5269 /* appbar.numberlist.rest.png */; };
+		3BD52F291667F41C007AE676 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD52F281667F41C007AE676 /* IIViewDeckController.m */; };
+		3BD52F2B1667F4CC007AE676 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */; };
+		3BD52F2E1667F519007AE676 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD52F2D1667F519007AE676 /* WrapController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,13 +44,17 @@
 		3B81D044166700B500AB5269 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3B81D046166700B500AB5269 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3B81D047166700B500AB5269 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3B81D04A166700B500AB5269 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		3B81D04D166700B500AB5269 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		3B81D04A166700B500AB5269 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		3B81D054166704B800AB5269 /* Calendar-Week.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar-Week.png"; sourceTree = "<group>"; };
 		3B81D0561667050300AB5269 /* appbar.phonebook.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.phonebook.rest.png; sourceTree = "<group>"; };
 		3B81D05A1667056C00AB5269 /* appbar.time.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.time.rest.png; path = ../appbar.time.rest.png; sourceTree = "<group>"; };
 		3B81D05C1667063A00AB5269 /* appbar.pin.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.pin.rest.png; path = ../appbar.pin.rest.png; sourceTree = "<group>"; };
 		3B81D0601667066C00AB5269 /* appbar.numberlist.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.numberlist.rest.png; path = ../appbar.numberlist.rest.png; sourceTree = "<group>"; };
+		3BD52F271667F41C007AE676 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
+		3BD52F281667F41C007AE676 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3BD52F2C1667F519007AE676 /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WrapController.h; path = ../WrapController.h; sourceTree = "<group>"; };
+		3BD52F2D1667F519007AE676 /* WrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WrapController.m; path = ../WrapController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD52F2B1667F4CC007AE676 /* QuartzCore.framework in Frameworks */,
 				3B81D02F166700B500AB5269 /* UIKit.framework in Frameworks */,
 				3B81D031166700B500AB5269 /* Foundation.framework in Frameworks */,
 				3B81D033166700B500AB5269 /* CoreGraphics.framework in Frameworks */,
@@ -85,6 +92,7 @@
 		3B81D02D166700B500AB5269 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */,
 				3B81D02E166700B500AB5269 /* UIKit.framework */,
 				3B81D030166700B500AB5269 /* Foundation.framework */,
 				3B81D032166700B500AB5269 /* CoreGraphics.framework */,
@@ -95,12 +103,11 @@
 		3B81D034166700B500AB5269 /* TCDB2 */ = {
 			isa = PBXGroup;
 			children = (
-				3B81D03D166700B500AB5269 /* AppDelegate.h */,
-				3B81D03E166700B500AB5269 /* AppDelegate.m */,
+				3BD52F2F1667F5AF007AE676 /* AppDelegate */,
+				3BD52F301667F5B9007AE676 /* Helper Classes */,
 				3B81D046166700B500AB5269 /* ViewController.h */,
 				3B81D047166700B500AB5269 /* ViewController.m */,
-				3B81D049166700B500AB5269 /* ViewController_iPhone.xib */,
-				3B81D04C166700B500AB5269 /* ViewController_iPad.xib */,
+				3B81D049166700B500AB5269 /* ViewController.xib */,
 				3B81D035166700B500AB5269 /* Supporting Files */,
 			);
 			path = TCDB2;
@@ -123,6 +130,26 @@
 				3B81D044166700B500AB5269 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3BD52F2F1667F5AF007AE676 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3B81D03D166700B500AB5269 /* AppDelegate.h */,
+				3B81D03E166700B500AB5269 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3BD52F301667F5B9007AE676 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3BD52F271667F41C007AE676 /* IIViewDeckController.h */,
+				3BD52F281667F41C007AE676 /* IIViewDeckController.m */,
+				3BD52F2C1667F519007AE676 /* WrapController.h */,
+				3BD52F2D1667F519007AE676 /* WrapController.m */,
+			);
+			name = "Helper Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +207,7 @@
 				3B81D041166700B500AB5269 /* Default.png in Resources */,
 				3B81D043166700B500AB5269 /* Default@2x.png in Resources */,
 				3B81D045166700B500AB5269 /* Default-568h@2x.png in Resources */,
-				3B81D04B166700B500AB5269 /* ViewController_iPhone.xib in Resources */,
-				3B81D04E166700B500AB5269 /* ViewController_iPad.xib in Resources */,
+				3B81D04B166700B500AB5269 /* ViewController.xib in Resources */,
 				3B81D055166704B800AB5269 /* Calendar-Week.png in Resources */,
 				3B81D0571667050300AB5269 /* appbar.phonebook.rest.png in Resources */,
 				3B81D05B1667056C00AB5269 /* appbar.time.rest.png in Resources */,
@@ -200,6 +226,8 @@
 				3B81D03B166700B500AB5269 /* main.m in Sources */,
 				3B81D03F166700B500AB5269 /* AppDelegate.m in Sources */,
 				3B81D048166700B500AB5269 /* ViewController.m in Sources */,
+				3BD52F291667F41C007AE676 /* IIViewDeckController.m in Sources */,
+				3BD52F2E1667F519007AE676 /* WrapController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,20 +242,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3B81D049166700B500AB5269 /* ViewController_iPhone.xib */ = {
+		3B81D049166700B500AB5269 /* ViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3B81D04A166700B500AB5269 /* en */,
 			);
-			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		3B81D04C166700B500AB5269 /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B81D04D166700B500AB5269 /* en */,
-			);
-			name = ViewController_iPad.xib;
+			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -328,6 +348,7 @@
 				3B81D053166700B500AB5269 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

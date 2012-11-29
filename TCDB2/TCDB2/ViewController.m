@@ -7,12 +7,23 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    AppDelegate *mainDelegate;
+}
+
+//Do some initialization of our own
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        mainDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -26,4 +37,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)menuButtonTapped:(id)sender{
+    if(mainDelegate.deckController.leftControllerIsClosed)
+        [mainDelegate.deckController openLeftView];
+    else
+        [mainDelegate.deckController closeLeftView];
+}
+
+- (IBAction)directoryButtonTapped:(id)sender{
+}
+- (IBAction)shiftsButtonTapped:(id)sender{
+}
+- (IBAction)scheduleButtonTapped:(id)sender{
+}
+- (IBAction)clockButtonTapped:(id)sender{
+}
 @end
