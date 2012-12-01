@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "IIViewDeckController.h"
+#import "HomeViewController.h"
 
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) HomeViewController *home;
 @property (strong, nonatomic) IIViewDeckController* deckController;
 
 @end

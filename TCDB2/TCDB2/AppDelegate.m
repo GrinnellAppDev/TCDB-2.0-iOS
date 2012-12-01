@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "IIViewDeckController.h"
-#import "ViewController.h"
+#import "HomeViewController.h"
+#import "MenuViewController.h"
 
 @implementation AppDelegate
 
@@ -16,12 +17,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.home = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
     
     // prepare view controllers
-    UIViewController* leftController = [[UIViewController alloc] init];
+    MenuViewController *menu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     
-    self.deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.viewController leftViewController:leftController rightViewController:nil];
+    self.deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.home leftViewController:menu rightViewController:nil];
     
     self.window.rootViewController = self.deckController;
     [self.window makeKeyAndVisible];

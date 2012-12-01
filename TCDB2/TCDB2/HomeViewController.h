@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HomeViewController.h
 //  TCDB2
 //
 //  Created by Colin Tremblay on 11/28/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface HomeViewController : UIViewController
 
 - (IBAction)menuButtonTapped:(id)sender;
 - (IBAction)directoryButtonTapped:(id)sender;

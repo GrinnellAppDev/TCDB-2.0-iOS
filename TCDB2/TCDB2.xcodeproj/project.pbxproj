@@ -16,7 +16,13 @@
 		3B749307166A767000BAC7E4 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B749305166A767000BAC7E4 /* WrapController.m */; };
 		3B74930B166A77CB00BAC7E4 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B749309166A77CB00BAC7E4 /* MenuViewController.m */; };
 		3B74930C166A77CB00BAC7E4 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B74930A166A77CB00BAC7E4 /* MenuViewController.xib */; };
-		3B74930E166A77E400BAC7E4 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B74930D166A77E400BAC7E4 /* ViewController.xib */; };
+		3B74930E166A77E400BAC7E4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B74930D166A77E400BAC7E4 /* HomeViewController.xib */; };
+		3B8079B5166A82A0005FB31A /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8079B3166A82A0005FB31A /* ClockViewController.m */; };
+		3B8079B6166A82A0005FB31A /* ClockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8079B4166A82A0005FB31A /* ClockViewController.xib */; };
+		3B8079BB166A8A45005FB31A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8079B9166A8A44005FB31A /* ScheduleViewController.m */; };
+		3B8079BC166A8A45005FB31A /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8079BA166A8A44005FB31A /* ScheduleViewController.xib */; };
+		3B8079C3166A8B60005FB31A /* DirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8079C1166A8B60005FB31A /* DirectoryViewController.m */; };
+		3B8079C4166A8B60005FB31A /* DirectoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8079C2166A8B60005FB31A /* DirectoryViewController.xib */; };
 		3B81D02F166700B500AB5269 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B81D02E166700B500AB5269 /* UIKit.framework */; };
 		3B81D031166700B500AB5269 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B81D030166700B500AB5269 /* Foundation.framework */; };
 		3B81D033166700B500AB5269 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B81D032166700B500AB5269 /* CoreGraphics.framework */; };
@@ -26,7 +32,9 @@
 		3B81D041166700B500AB5269 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D040166700B500AB5269 /* Default.png */; };
 		3B81D043166700B500AB5269 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D042166700B500AB5269 /* Default@2x.png */; };
 		3B81D045166700B500AB5269 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D044166700B500AB5269 /* Default-568h@2x.png */; };
-		3B81D048166700B500AB5269 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B81D047166700B500AB5269 /* ViewController.m */; };
+		3B81D048166700B500AB5269 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B81D047166700B500AB5269 /* HomeViewController.m */; };
+		3BBB2FA5166A8BFB00ECFD63 /* ShiftsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBB2FA3166A8BFB00ECFD63 /* ShiftsViewController.m */; };
+		3BBB2FA6166A8BFB00ECFD63 /* ShiftsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BBB2FA4166A8BFB00ECFD63 /* ShiftsViewController.xib */; };
 		3BD52F2B1667F4CC007AE676 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +51,16 @@
 		3B749308166A77CB00BAC7E4 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		3B749309166A77CB00BAC7E4 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		3B74930A166A77CB00BAC7E4 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
-		3B74930D166A77E400BAC7E4 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		3B74930D166A77E400BAC7E4 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		3B8079B2166A82A0005FB31A /* ClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockViewController.h; sourceTree = "<group>"; };
+		3B8079B3166A82A0005FB31A /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
+		3B8079B4166A82A0005FB31A /* ClockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClockViewController.xib; sourceTree = "<group>"; };
+		3B8079B8166A8A44005FB31A /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
+		3B8079B9166A8A44005FB31A /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
+		3B8079BA166A8A44005FB31A /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
+		3B8079C0166A8B60005FB31A /* DirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryViewController.h; sourceTree = "<group>"; };
+		3B8079C1166A8B60005FB31A /* DirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryViewController.m; sourceTree = "<group>"; };
+		3B8079C2166A8B60005FB31A /* DirectoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryViewController.xib; sourceTree = "<group>"; };
 		3B81D02A166700B500AB5269 /* TCDB2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCDB2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B81D02E166700B500AB5269 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3B81D030166700B500AB5269 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,8 +74,11 @@
 		3B81D040166700B500AB5269 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3B81D042166700B500AB5269 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3B81D044166700B500AB5269 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3B81D046166700B500AB5269 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3B81D047166700B500AB5269 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3B81D046166700B500AB5269 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		3B81D047166700B500AB5269 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		3BBB2FA2166A8BFB00ECFD63 /* ShiftsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShiftsViewController.h; path = ../ShiftsViewController.h; sourceTree = "<group>"; };
+		3BBB2FA3166A8BFB00ECFD63 /* ShiftsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShiftsViewController.m; path = ../ShiftsViewController.m; sourceTree = "<group>"; };
+		3BBB2FA4166A8BFB00ECFD63 /* ShiftsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShiftsViewController.xib; path = ../ShiftsViewController.xib; sourceTree = "<group>"; };
 		3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -123,9 +143,21 @@
 				3BD52F2F1667F5AF007AE676 /* AppDelegate */,
 				3BD52F301667F5B9007AE676 /* Helper Classes */,
 				3B3E4BA8166A74770099DA35 /* Images */,
-				3B81D046166700B500AB5269 /* ViewController.h */,
-				3B81D047166700B500AB5269 /* ViewController.m */,
-				3B74930D166A77E400BAC7E4 /* ViewController.xib */,
+				3B81D046166700B500AB5269 /* HomeViewController.h */,
+				3B81D047166700B500AB5269 /* HomeViewController.m */,
+				3B74930D166A77E400BAC7E4 /* HomeViewController.xib */,
+				3B8079B2166A82A0005FB31A /* ClockViewController.h */,
+				3B8079B3166A82A0005FB31A /* ClockViewController.m */,
+				3B8079B4166A82A0005FB31A /* ClockViewController.xib */,
+				3B8079C0166A8B60005FB31A /* DirectoryViewController.h */,
+				3B8079C1166A8B60005FB31A /* DirectoryViewController.m */,
+				3B8079C2166A8B60005FB31A /* DirectoryViewController.xib */,
+				3B8079B8166A8A44005FB31A /* ScheduleViewController.h */,
+				3B8079B9166A8A44005FB31A /* ScheduleViewController.m */,
+				3B8079BA166A8A44005FB31A /* ScheduleViewController.xib */,
+				3BBB2FA2166A8BFB00ECFD63 /* ShiftsViewController.h */,
+				3BBB2FA3166A8BFB00ECFD63 /* ShiftsViewController.m */,
+				3BBB2FA4166A8BFB00ECFD63 /* ShiftsViewController.xib */,
 				3B749308166A77CB00BAC7E4 /* MenuViewController.h */,
 				3B749309166A77CB00BAC7E4 /* MenuViewController.m */,
 				3B74930A166A77CB00BAC7E4 /* MenuViewController.xib */,
@@ -229,7 +261,11 @@
 				3B749300166A765900BAC7E4 /* appbar.time.rest.png in Resources */,
 				3B749301166A765900BAC7E4 /* Calendar-Week.png in Resources */,
 				3B74930C166A77CB00BAC7E4 /* MenuViewController.xib in Resources */,
-				3B74930E166A77E400BAC7E4 /* ViewController.xib in Resources */,
+				3B74930E166A77E400BAC7E4 /* HomeViewController.xib in Resources */,
+				3B8079B6166A82A0005FB31A /* ClockViewController.xib in Resources */,
+				3B8079BC166A8A45005FB31A /* ScheduleViewController.xib in Resources */,
+				3B8079C4166A8B60005FB31A /* DirectoryViewController.xib in Resources */,
+				3BBB2FA6166A8BFB00ECFD63 /* ShiftsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,10 +278,14 @@
 			files = (
 				3B81D03B166700B500AB5269 /* main.m in Sources */,
 				3B81D03F166700B500AB5269 /* AppDelegate.m in Sources */,
-				3B81D048166700B500AB5269 /* ViewController.m in Sources */,
+				3B81D048166700B500AB5269 /* HomeViewController.m in Sources */,
 				3B749306166A767000BAC7E4 /* IIViewDeckController.m in Sources */,
 				3B749307166A767000BAC7E4 /* WrapController.m in Sources */,
 				3B74930B166A77CB00BAC7E4 /* MenuViewController.m in Sources */,
+				3B8079B5166A82A0005FB31A /* ClockViewController.m in Sources */,
+				3B8079BB166A8A45005FB31A /* ScheduleViewController.m in Sources */,
+				3B8079C3166A8B60005FB31A /* DirectoryViewController.m in Sources */,
+				3BBB2FA5166A8BFB00ECFD63 /* ShiftsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

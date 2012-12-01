@@ -1,5 +1,5 @@
 //
-//  MenuViewController.h
+//  ScheduleViewController.h
 //  TCDB2
 //
 //  Created by Colin Tremblay on 12/1/12.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewController : UIViewController
-
+@interface ScheduleViewController : UIViewController
 
 @end
