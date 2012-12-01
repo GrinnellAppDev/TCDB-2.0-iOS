@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B7492FD166A765900BAC7E4 /* appbar.numberlist.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7492F8166A765900BAC7E4 /* appbar.numberlist.rest.png */; };
+		3B7492FE166A765900BAC7E4 /* appbar.phonebook.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7492F9166A765900BAC7E4 /* appbar.phonebook.rest.png */; };
+		3B7492FF166A765900BAC7E4 /* appbar.pin.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7492FA166A765900BAC7E4 /* appbar.pin.rest.png */; };
+		3B749300166A765900BAC7E4 /* appbar.time.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7492FB166A765900BAC7E4 /* appbar.time.rest.png */; };
+		3B749301166A765900BAC7E4 /* Calendar-Week.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7492FC166A765900BAC7E4 /* Calendar-Week.png */; };
+		3B749306166A767000BAC7E4 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B749303166A767000BAC7E4 /* IIViewDeckController.m */; };
+		3B749307166A767000BAC7E4 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B749305166A767000BAC7E4 /* WrapController.m */; };
 		3B81D02F166700B500AB5269 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B81D02E166700B500AB5269 /* UIKit.framework */; };
 		3B81D031166700B500AB5269 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B81D030166700B500AB5269 /* Foundation.framework */; };
 		3B81D033166700B500AB5269 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B81D032166700B500AB5269 /* CoreGraphics.framework */; };
@@ -18,17 +25,19 @@
 		3B81D045166700B500AB5269 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D044166700B500AB5269 /* Default-568h@2x.png */; };
 		3B81D048166700B500AB5269 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B81D047166700B500AB5269 /* ViewController.m */; };
 		3B81D04B166700B500AB5269 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D049166700B500AB5269 /* ViewController.xib */; };
-		3B81D055166704B800AB5269 /* Calendar-Week.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D054166704B800AB5269 /* Calendar-Week.png */; };
-		3B81D0571667050300AB5269 /* appbar.phonebook.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D0561667050300AB5269 /* appbar.phonebook.rest.png */; };
-		3B81D05B1667056C00AB5269 /* appbar.time.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D05A1667056C00AB5269 /* appbar.time.rest.png */; };
-		3B81D05D1667063A00AB5269 /* appbar.pin.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D05C1667063A00AB5269 /* appbar.pin.rest.png */; };
-		3B81D0611667066C00AB5269 /* appbar.numberlist.rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B81D0601667066C00AB5269 /* appbar.numberlist.rest.png */; };
-		3BD52F291667F41C007AE676 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD52F281667F41C007AE676 /* IIViewDeckController.m */; };
 		3BD52F2B1667F4CC007AE676 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */; };
-		3BD52F2E1667F519007AE676 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD52F2D1667F519007AE676 /* WrapController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B7492F8166A765900BAC7E4 /* appbar.numberlist.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.numberlist.rest.png; path = Images/appbar.numberlist.rest.png; sourceTree = "<group>"; };
+		3B7492F9166A765900BAC7E4 /* appbar.phonebook.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.phonebook.rest.png; path = Images/appbar.phonebook.rest.png; sourceTree = "<group>"; };
+		3B7492FA166A765900BAC7E4 /* appbar.pin.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.pin.rest.png; path = Images/appbar.pin.rest.png; sourceTree = "<group>"; };
+		3B7492FB166A765900BAC7E4 /* appbar.time.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.time.rest.png; path = Images/appbar.time.rest.png; sourceTree = "<group>"; };
+		3B7492FC166A765900BAC7E4 /* Calendar-Week.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Calendar-Week.png"; path = "Images/Calendar-Week.png"; sourceTree = "<group>"; };
+		3B749302166A767000BAC7E4 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = "Helper Classes/IIViewDeckController.h"; sourceTree = "<group>"; };
+		3B749303166A767000BAC7E4 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = "Helper Classes/IIViewDeckController.m"; sourceTree = "<group>"; };
+		3B749304166A767000BAC7E4 /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WrapController.h; path = "Helper Classes/WrapController.h"; sourceTree = "<group>"; };
+		3B749305166A767000BAC7E4 /* WrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WrapController.m; path = "Helper Classes/WrapController.m"; sourceTree = "<group>"; };
 		3B81D02A166700B500AB5269 /* TCDB2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCDB2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B81D02E166700B500AB5269 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3B81D030166700B500AB5269 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -45,16 +54,7 @@
 		3B81D046166700B500AB5269 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3B81D047166700B500AB5269 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3B81D04A166700B500AB5269 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		3B81D054166704B800AB5269 /* Calendar-Week.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar-Week.png"; sourceTree = "<group>"; };
-		3B81D0561667050300AB5269 /* appbar.phonebook.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.phonebook.rest.png; sourceTree = "<group>"; };
-		3B81D05A1667056C00AB5269 /* appbar.time.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.time.rest.png; path = ../appbar.time.rest.png; sourceTree = "<group>"; };
-		3B81D05C1667063A00AB5269 /* appbar.pin.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.pin.rest.png; path = ../appbar.pin.rest.png; sourceTree = "<group>"; };
-		3B81D0601667066C00AB5269 /* appbar.numberlist.rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.numberlist.rest.png; path = ../appbar.numberlist.rest.png; sourceTree = "<group>"; };
-		3BD52F271667F41C007AE676 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
-		3BD52F281667F41C007AE676 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
 		3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		3BD52F2C1667F519007AE676 /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WrapController.h; path = ../WrapController.h; sourceTree = "<group>"; };
-		3BD52F2D1667F519007AE676 /* WrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WrapController.m; path = ../WrapController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +72,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B3E4BA8166A74770099DA35 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3B7492F8166A765900BAC7E4 /* appbar.numberlist.rest.png */,
+				3B7492F9166A765900BAC7E4 /* appbar.phonebook.rest.png */,
+				3B7492FA166A765900BAC7E4 /* appbar.pin.rest.png */,
+				3B7492FB166A765900BAC7E4 /* appbar.time.rest.png */,
+				3B7492FC166A765900BAC7E4 /* Calendar-Week.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		3B81D01F166700B500AB5269 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +117,7 @@
 			children = (
 				3BD52F2F1667F5AF007AE676 /* AppDelegate */,
 				3BD52F301667F5B9007AE676 /* Helper Classes */,
+				3B3E4BA8166A74770099DA35 /* Images */,
 				3B81D046166700B500AB5269 /* ViewController.h */,
 				3B81D047166700B500AB5269 /* ViewController.m */,
 				3B81D049166700B500AB5269 /* ViewController.xib */,
@@ -116,11 +129,6 @@
 		3B81D035166700B500AB5269 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3B81D054166704B800AB5269 /* Calendar-Week.png */,
-				3B81D0561667050300AB5269 /* appbar.phonebook.rest.png */,
-				3B81D05A1667056C00AB5269 /* appbar.time.rest.png */,
-				3B81D0601667066C00AB5269 /* appbar.numberlist.rest.png */,
-				3B81D05C1667063A00AB5269 /* appbar.pin.rest.png */,
 				3B81D036166700B500AB5269 /* TCDB2-Info.plist */,
 				3B81D037166700B500AB5269 /* InfoPlist.strings */,
 				3B81D03A166700B500AB5269 /* main.m */,
@@ -144,10 +152,10 @@
 		3BD52F301667F5B9007AE676 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3BD52F271667F41C007AE676 /* IIViewDeckController.h */,
-				3BD52F281667F41C007AE676 /* IIViewDeckController.m */,
-				3BD52F2C1667F519007AE676 /* WrapController.h */,
-				3BD52F2D1667F519007AE676 /* WrapController.m */,
+				3B749302166A767000BAC7E4 /* IIViewDeckController.h */,
+				3B749303166A767000BAC7E4 /* IIViewDeckController.m */,
+				3B749304166A767000BAC7E4 /* WrapController.h */,
+				3B749305166A767000BAC7E4 /* WrapController.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -208,11 +216,11 @@
 				3B81D043166700B500AB5269 /* Default@2x.png in Resources */,
 				3B81D045166700B500AB5269 /* Default-568h@2x.png in Resources */,
 				3B81D04B166700B500AB5269 /* ViewController.xib in Resources */,
-				3B81D055166704B800AB5269 /* Calendar-Week.png in Resources */,
-				3B81D0571667050300AB5269 /* appbar.phonebook.rest.png in Resources */,
-				3B81D05B1667056C00AB5269 /* appbar.time.rest.png in Resources */,
-				3B81D05D1667063A00AB5269 /* appbar.pin.rest.png in Resources */,
-				3B81D0611667066C00AB5269 /* appbar.numberlist.rest.png in Resources */,
+				3B7492FD166A765900BAC7E4 /* appbar.numberlist.rest.png in Resources */,
+				3B7492FE166A765900BAC7E4 /* appbar.phonebook.rest.png in Resources */,
+				3B7492FF166A765900BAC7E4 /* appbar.pin.rest.png in Resources */,
+				3B749300166A765900BAC7E4 /* appbar.time.rest.png in Resources */,
+				3B749301166A765900BAC7E4 /* Calendar-Week.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,8 +234,8 @@
 				3B81D03B166700B500AB5269 /* main.m in Sources */,
 				3B81D03F166700B500AB5269 /* AppDelegate.m in Sources */,
 				3B81D048166700B500AB5269 /* ViewController.m in Sources */,
-				3BD52F291667F41C007AE676 /* IIViewDeckController.m in Sources */,
-				3BD52F2E1667F519007AE676 /* WrapController.m in Sources */,
+				3B749306166A767000BAC7E4 /* IIViewDeckController.m in Sources */,
+				3B749307166A767000BAC7E4 /* WrapController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
