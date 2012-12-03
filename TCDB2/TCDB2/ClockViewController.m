@@ -20,7 +20,7 @@
 @implementation ClockViewController {
     AppDelegate *mainDelegate;
 }
-
+@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, doneButton, activeView, labPicker, scrollView, commentField, labsField, labsArray, doneBar;
 //Do some initialization of our own
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
@@ -123,6 +123,7 @@
     
     // If active text field is hidden by keyboard, scroll it so it's visible
     double offset = kbSize.height/2;
+//    offset = self.commentField.frame.origin.y;
     CGPoint scrollPoint = CGPointMake(0.0, offset);
     [self.scrollView setContentOffset:scrollPoint animated:YES];
 }

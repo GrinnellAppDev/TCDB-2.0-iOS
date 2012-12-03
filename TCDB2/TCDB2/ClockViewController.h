@@ -14,7 +14,7 @@
 - (IBAction)shiftsButtonTapped:(id)sender;
 - (IBAction)scheduleButtonTapped:(id)sender;
 - (IBAction)clockButtonTapped:(id)sender;
-
+- (void)registerForKeyboardNotifications;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *menuButton;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *directoryButton;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *shiftsButton;

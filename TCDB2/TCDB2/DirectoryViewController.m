@@ -20,7 +20,7 @@
 @implementation DirectoryViewController {
     AppDelegate *mainDelegate;
 }
-
+@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton;
 //Do some initialization of our own
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {

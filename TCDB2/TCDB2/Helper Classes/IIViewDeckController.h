@@ -119,6 +119,7 @@ typedef void (^IIViewDeckControllerBlock) (IIViewDeckController *controller);
 - (BOOL)closeLeftViewAnimated:(BOOL)animated completion:(void(^)(IIViewDeckController* controller))completed;
 - (BOOL)closeLeftViewBouncing:(IIViewDeckControllerBlock)bounced;
 - (BOOL)closeLeftViewBouncing:(IIViewDeckControllerBlock)bounced completion:(IIViewDeckControllerBlock)completed;
+- (BOOL)closeLeftViewBouncing:(IIViewDeckControllerBlock)bounced callDelegate:(BOOL)callDelegate completion:(IIViewDeckControllerBlock)completed;
 
 - (BOOL)bounceRightView;
 - (BOOL)bounceRightViewWithCompletion:(IIViewDeckControllerBlock)completed;
@@ -137,6 +138,7 @@ typedef void (^IIViewDeckControllerBlock) (IIViewDeckController *controller);
 - (BOOL)closeRightViewAnimated:(BOOL)animated completion:(IIViewDeckControllerBlock)completed;
 - (BOOL)closeRightViewBouncing:(IIViewDeckControllerBlock)bounced;
 - (BOOL)closeRightViewBouncing:(IIViewDeckControllerBlock)bounced completion:(IIViewDeckControllerBlock)completed;
+- (BOOL)closeRightViewBouncing:(IIViewDeckControllerBlock)bounced callDelegate:(BOOL)callDelegate completion:(IIViewDeckControllerBlock)completed;
 - (void)rightViewPushViewControllerOverCenterController:(UIViewController*)controller;
 
 - (BOOL)leftControllerIsClosed;
@@ -145,7 +147,7 @@ typedef void (^IIViewDeckControllerBlock) (IIViewDeckController *controller);
 - (BOOL)rightControllerIsOpen;
 
 - (CGFloat)statusBarHeight;
-
+- (CGFloat)locationOfPanner:(UIPanGestureRecognizer*)panner;
 @end
 
 
