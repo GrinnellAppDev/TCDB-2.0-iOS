@@ -28,5 +28,9 @@
 @property (nonatomic, weak) IBOutlet UIPickerView *labPicker;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UITextView *activeView;
-
+@property (nonatomic, weak) IBOutlet UILabel *dateField;
+@property (nonatomic, weak) IBOutlet UILabel *startTimeField;
+@property (nonatomic, weak) IBOutlet UILabel *endTimeField;
+@property (nonatomic, weak) IBOutlet UILabel *endTimeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *clockLabel;
 @end

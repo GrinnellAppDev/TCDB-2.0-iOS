@@ -37,6 +37,15 @@
     self.doneBar.hidden = YES;
     self.labPicker.showsSelectionIndicator = YES;
     [self registerForKeyboardNotifications];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter  setDateFormat:@"yyyy-MM-dd"];
+    NSString *formattedDate = [dateFormatter stringFromDate:[NSDate date]];
+    self.dateField.text = formattedDate;
+    [dateFormatter  setDateFormat:@"HH:mm"];
+    formattedDate = [dateFormatter stringFromDate:[NSDate date]];
+    self.startTimeField.text = formattedDate;
+    self.endTimeField.hidden = YES;
+    self.endTimeLabel.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -114,6 +123,7 @@
 
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification {
+    if(self.activeView){
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
@@ -123,9 +133,10 @@
     
     // If active text field is hidden by keyboard, scroll it so it's visible
     double offset = kbSize.height/2;
-//    offset = self.commentField.frame.origin.y;
+    offset = self.commentField.frame.origin.y - 44;
     CGPoint scrollPoint = CGPointMake(0.0, offset);
     [self.scrollView setContentOffset:scrollPoint animated:YES];
+    }
 }
 
 // Called when the UIKeyboardWillHideNotification is sent

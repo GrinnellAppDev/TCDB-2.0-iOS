@@ -36,6 +36,8 @@
 		3BBB2FA5166A8BFB00ECFD63 /* ShiftsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBB2FA3166A8BFB00ECFD63 /* ShiftsViewController.m */; };
 		3BBB2FA6166A8BFB00ECFD63 /* ShiftsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BBB2FA4166A8BFB00ECFD63 /* ShiftsViewController.xib */; };
 		3BD52F2B1667F4CC007AE676 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */; };
+		3BDA60F9166D57980072C5AD /* selectedcheckbox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BDA60F7166D57980072C5AD /* selectedcheckbox.jpg */; };
+		3BDA60FA166D57980072C5AD /* notselectedcheckbox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BDA60F8166D57980072C5AD /* notselectedcheckbox.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		3BBB2FA3166A8BFB00ECFD63 /* ShiftsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShiftsViewController.m; path = ../ShiftsViewController.m; sourceTree = "<group>"; };
 		3BBB2FA4166A8BFB00ECFD63 /* ShiftsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShiftsViewController.xib; path = ../ShiftsViewController.xib; sourceTree = "<group>"; };
 		3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3BDA60F7166D57980072C5AD /* selectedcheckbox.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectedcheckbox.jpg; sourceTree = "<group>"; };
+		3BDA60F8166D57980072C5AD /* notselectedcheckbox.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = notselectedcheckbox.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 		3B3E4BA8166A74770099DA35 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3BDA60F7166D57980072C5AD /* selectedcheckbox.jpg */,
+				3BDA60F8166D57980072C5AD /* notselectedcheckbox.jpg */,
 				3B7492F8166A765900BAC7E4 /* appbar.numberlist.rest.png */,
 				3B7492F9166A765900BAC7E4 /* appbar.phonebook.rest.png */,
 				3B7492FA166A765900BAC7E4 /* appbar.pin.rest.png */,
@@ -266,6 +272,8 @@
 				3B8079BC166A8A45005FB31A /* ScheduleViewController.xib in Resources */,
 				3B8079C4166A8B60005FB31A /* DirectoryViewController.xib in Resources */,
 				3BBB2FA6166A8BFB00ECFD63 /* ShiftsViewController.xib in Resources */,
+				3BDA60F9166D57980072C5AD /* selectedcheckbox.jpg in Resources */,
+				3BDA60FA166D57980072C5AD /* notselectedcheckbox.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
