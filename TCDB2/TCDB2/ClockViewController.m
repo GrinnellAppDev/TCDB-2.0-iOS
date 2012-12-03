@@ -36,6 +36,7 @@
     self.labPicker.hidden = YES;
     self.doneBar.hidden = YES;
     self.labPicker.showsSelectionIndicator = YES;
+    [self registerForKeyboardNotifications];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,15 +89,48 @@
     return self.labsArray.count;
 }
 
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.labsField.text = [self.labsArray objectAtIndex:row];
 }
 
-- (IBAction)doneChoosing:(id)sender{
-    [self.labPicker resignFirstResponder];
-    [self.labPicker removeFromSuperview];
-    self.labPicker.hidden = YES;
+- (IBAction)doneChoosing:(id)sender {
+    [self.labsField resignFirstResponder];
+    [self.commentField resignFirstResponder];
     self.doneBar.hidden = YES;
+}
+-(void)textViewDidBeginEditing:(UITextView *)textView{
+    self.doneBar.hidden = NO;
+    self.activeView = textView;
+}
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    self.doneBar.hidden = YES;
+    self.activeView = nil;
+}
+- (void)registerForKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification {
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    double offset = kbSize.height/2;
+    CGPoint scrollPoint = CGPointMake(0.0, offset);
+    [self.scrollView setContentOffset:scrollPoint animated:YES];
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification {
+    CGPoint scrollPoint = CGPointMake(0.0, 0.0);
+    [self.scrollView setContentOffset:scrollPoint animated:YES];
 }
 
 @end
