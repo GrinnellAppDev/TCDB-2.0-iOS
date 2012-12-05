@@ -20,7 +20,7 @@
 @implementation ClockViewController {
     AppDelegate *mainDelegate;
 }
-@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, doneButton, activeView, labPicker, scrollView, commentField, labsField, labsArray, doneBar;
+@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, doneButton, activeView, labPicker, scrollView, commentField, labsField, labsArray, doneBar, dateField, startTimeField, endTimeField, endTimeLabel, clockLabel, mentoringSwitch;
 //Do some initialization of our own
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
