@@ -43,10 +43,10 @@
 
 # pragma mark Toolbar Methods
 - (IBAction)menuButtonTapped:(id)sender{
-    if(mainDelegate.deckController.leftControllerIsClosed)
-        [mainDelegate.deckController openLeftView];
-    else
-        [mainDelegate.deckController closeLeftView];
+    [mainDelegate.deckController toggleLeftView];
+}
+- (IBAction)clockButtonTapped:(id)sender{
+    [mainDelegate.deckController toggleRightView];
 }
 - (IBAction)directoryButtonTapped:(id)sender{
     DirectoryViewController *directory = [[DirectoryViewController alloc] initWithNibName:@"DirectoryViewController" bundle:nil];
@@ -60,10 +60,5 @@
     ScheduleViewController *schedule = [[ScheduleViewController alloc] initWithNibName:@"ScheduleViewController" bundle:nil];
     mainDelegate.deckController.centerController = schedule;
 }
-- (IBAction)clockButtonTapped:(id)sender{
-    ClockViewController *clock = [[ClockViewController alloc] initWithNibName:@"ClockViewController" bundle:nil];
-    mainDelegate.deckController.centerController = clock;
-}
-
 
 @end

@@ -10,6 +10,7 @@
 #import "IIViewDeckController.h"
 #import "HomeViewController.h"
 #import "MenuViewController.h"
+#import "ClockViewController.h"
 
 @implementation AppDelegate
 @synthesize window, deckController, home;
@@ -21,8 +22,9 @@
     
     // prepare view controllers
     MenuViewController *menu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    ClockViewController *clock = [[ClockViewController alloc] initWithNibName:@"ClockViewController" bundle:nil];
     
-    self.deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.home leftViewController:menu rightViewController:nil];
+    self.deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.home leftViewController:menu rightViewController:clock];
     
     self.window.rootViewController = self.deckController;
     [self.window makeKeyAndVisible];
