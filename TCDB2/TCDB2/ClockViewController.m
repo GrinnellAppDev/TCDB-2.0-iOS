@@ -58,7 +58,8 @@
     [mainDelegate.deckController toggleLeftView];
 }
 - (IBAction)clockButtonTapped:(id)sender{
-    [mainDelegate.deckController toggleRightView];
+    ClockViewController *clock = [[ClockViewController alloc] initWithNibName:@"ClockViewController" bundle:nil];
+    mainDelegate.deckController.centerController = clock;
 }
 - (IBAction)directoryButtonTapped:(id)sender{
     DirectoryViewController *directory = [[DirectoryViewController alloc] initWithNibName:@"DirectoryViewController" bundle:nil];

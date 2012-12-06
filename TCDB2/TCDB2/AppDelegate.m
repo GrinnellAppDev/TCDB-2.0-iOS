@@ -22,9 +22,8 @@
     
     // prepare view controllers
     MenuViewController *menu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
-    ClockViewController *clock = [[ClockViewController alloc] initWithNibName:@"ClockViewController" bundle:nil];
     
-    self.deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.home leftViewController:menu rightViewController:clock];
+    self.deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.home leftViewController:menu rightViewController:nil];
     
     self.window.rootViewController = self.deckController;
     [self.window makeKeyAndVisible];
