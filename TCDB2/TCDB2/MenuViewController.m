@@ -8,7 +8,7 @@
 
 #import "MenuViewController.h"
 #import "AppDelegate.h"
-
+#import "StaticPagesViewController.h"
 @interface MenuViewController ()
 
 @end
@@ -71,9 +71,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Home"])
         mainDelegate.deckController.centerController = mainDelegate.home;
-    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Home"])
-        mainDelegate.deckController.centerController = mainDelegate.home;
-    
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Combo"]){
+        StaticPagesViewController *staticPage = [[StaticPagesViewController alloc] initWithNibName:@"StaticPagesViewController" bundle:nil];
+        mainDelegate.deckController.centerController = staticPage;
+    }
     [mainDelegate.deckController closeLeftView];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
