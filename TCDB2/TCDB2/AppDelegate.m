@@ -11,19 +11,20 @@
 #import "HomeViewController.h"
 #import "MenuViewController.h"
 #import "ClockViewController.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate
-@synthesize window, deckController, home;
+@synthesize window, deckController, home, login, menu;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.home = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
-    
+    self.login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     // prepare view controllers
-    MenuViewController *menu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    self.menu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     
-    self.deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.home leftViewController:menu rightViewController:nil];
+    self.deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.login leftViewController:nil rightViewController:nil];
     
     self.window.rootViewController = self.deckController;
     [self.window makeKeyAndVisible];

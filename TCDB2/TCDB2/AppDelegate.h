@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "IIViewDeckController.h"
 #import "HomeViewController.h"
+#import "LoginViewController.h"
+#import "MenuViewController.h"
 
 @class ViewController;
 
@@ -16,6 +18,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) HomeViewController *home;
+@property (strong, nonatomic) LoginViewController *login;
+@property (strong, nonatomic) MenuViewController *menu;
 @property (strong, nonatomic) IIViewDeckController* deckController;
 
 @end

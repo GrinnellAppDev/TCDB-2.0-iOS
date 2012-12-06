@@ -20,4 +20,5 @@
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *shiftsButton;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *scheduleButton;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *clockButton;
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
 @end

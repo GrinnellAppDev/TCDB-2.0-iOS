@@ -35,7 +35,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    NSURL *urlString = [[NSURL alloc] initWithString:@"http://tcdb.grinnell.edu/combo.php"];
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlString];
+    NSData *returnData = [NSURLConnection
+                          sendSynchronousRequest:urlRequest
+                          returningResponse:nil
+                          error:nil];
+    NSString *HTMLData = [[NSString alloc] initWithData:returnData
+                                               encoding:NSUTF8StringEncoding];
+    
+    NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+    resourcePath = [resourcePath stringByReplacingOccurrencesOfString:@"/" withString:@"//"];
+    resourcePath = [resourcePath stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    [self.webView loadHTMLString:HTMLData baseURL:[NSURL URLWithString:[NSString stringWithFormat:@"file:/%@//",resourcePath]]];
 }
 
 - (void)didReceiveMemoryWarning
