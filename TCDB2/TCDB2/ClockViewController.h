@@ -33,4 +33,5 @@
 @property (nonatomic, weak) IBOutlet UILabel *endTimeField;
 @property (nonatomic, weak) IBOutlet UILabel *endTimeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *clockLabel;
+@property (nonatomic, weak) IBOutlet UISwitch *mentoringSwitch;
 @end

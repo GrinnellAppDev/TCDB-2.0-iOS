@@ -12,11 +12,11 @@
 @interface MenuViewController ()
 
 @end
-
 @implementation MenuViewController {
     AppDelegate *mainDelegate;
 }
 
+@synthesize menuArray;
 //Do some initialization of our own
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    menuArray = [[NSMutableArray alloc] initWithObjects:@"Home", @"Profile", @"\t\t\t\t\tUpdate", @"Combo", @"Subs", @"Tools", @"Wiki", @"OldWiki", @"Total Hours", @"Etime", @"Handbook", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +48,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return menuArray.count;
 }
 
 
@@ -63,14 +63,19 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = @"Home";
+    cell.textLabel.text = [menuArray objectAtIndex:indexPath.row];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    mainDelegate.deckController.centerController = mainDelegate.home;
+    if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Home"])
+        mainDelegate.deckController.centerController = mainDelegate.home;
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Home"])
+        mainDelegate.deckController.centerController = mainDelegate.home;
+    
     [mainDelegate.deckController closeLeftView];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

@@ -38,6 +38,8 @@
 		3BD52F2B1667F4CC007AE676 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */; };
 		3BDA60F9166D57980072C5AD /* selectedcheckbox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BDA60F7166D57980072C5AD /* selectedcheckbox.jpg */; };
 		3BDA60FA166D57980072C5AD /* notselectedcheckbox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BDA60F8166D57980072C5AD /* notselectedcheckbox.jpg */; };
+		E16F2DD4166FC08C00B4A8E6 /* StaticPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16F2DD3166FC08B00B4A8E6 /* StaticPagesViewController.m */; };
+		E16F2DD7166FC0BC00B4A8E6 /* StaticPagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E16F2DD6166FC0BC00B4A8E6 /* StaticPagesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,9 @@
 		3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3BDA60F7166D57980072C5AD /* selectedcheckbox.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectedcheckbox.jpg; sourceTree = "<group>"; };
 		3BDA60F8166D57980072C5AD /* notselectedcheckbox.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = notselectedcheckbox.jpg; sourceTree = "<group>"; };
+		E16F2DD2166FC08A00B4A8E6 /* StaticPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticPagesViewController.h; sourceTree = "<group>"; };
+		E16F2DD3166FC08B00B4A8E6 /* StaticPagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticPagesViewController.m; sourceTree = "<group>"; };
+		E16F2DD6166FC0BC00B4A8E6 /* StaticPagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticPagesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +172,9 @@
 				3B749308166A77CB00BAC7E4 /* MenuViewController.h */,
 				3B749309166A77CB00BAC7E4 /* MenuViewController.m */,
 				3B74930A166A77CB00BAC7E4 /* MenuViewController.xib */,
+				E16F2DD2166FC08A00B4A8E6 /* StaticPagesViewController.h */,
+				E16F2DD3166FC08B00B4A8E6 /* StaticPagesViewController.m */,
+				E16F2DD6166FC0BC00B4A8E6 /* StaticPagesViewController.xib */,
 				3B81D035166700B500AB5269 /* Supporting Files */,
 			);
 			path = TCDB2;
@@ -274,6 +282,7 @@
 				3BBB2FA6166A8BFB00ECFD63 /* ShiftsViewController.xib in Resources */,
 				3BDA60F9166D57980072C5AD /* selectedcheckbox.jpg in Resources */,
 				3BDA60FA166D57980072C5AD /* notselectedcheckbox.jpg in Resources */,
+				E16F2DD7166FC0BC00B4A8E6 /* StaticPagesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +303,7 @@
 				3B8079BB166A8A45005FB31A /* ScheduleViewController.m in Sources */,
 				3B8079C3166A8B60005FB31A /* DirectoryViewController.m in Sources */,
 				3BBB2FA5166A8BFB00ECFD63 /* ShiftsViewController.m in Sources */,
+				E16F2DD4166FC08C00B4A8E6 /* StaticPagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
