@@ -53,7 +53,7 @@
         if([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""] ) {
             [self alertStatus:@"Please enter both Username and Password" :@"Login Failed!"];
         } else {
-            NSString *post =[[NSString alloc] initWithFormat:@"username=%@&password=%@",self.username.text, self.password.text];
+            NSString *post =[[NSString alloc] initWithFormat:@"login_username=%@&login_password=%@",self.username.text, self.password.text];
             NSLog(@"PostData: %@",post);
             
             NSURL *url=[NSURL URLWithString:@"http://tcdb.grinnell.edu/"];
@@ -89,7 +89,7 @@
                 NSLog(@"%d",success);
                 
                 // MANUALLY FORCE SUCCESS
-                success = 1;
+                //success = 1;
                 if(success == 1)
                 {
                     NSLog(@"Login SUCCESS");
