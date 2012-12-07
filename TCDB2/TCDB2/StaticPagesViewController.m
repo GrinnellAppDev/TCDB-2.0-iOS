@@ -22,7 +22,7 @@
     AppDelegate *mainDelegate;
 }
 
-@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton;
+@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, webView;
 //Do some initialization of our own
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
