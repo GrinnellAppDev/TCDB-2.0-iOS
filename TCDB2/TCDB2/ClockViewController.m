@@ -55,6 +55,9 @@
 
 # pragma mark Toolbar Methods
 - (IBAction)menuButtonTapped:(id)sender{
+    [self.labsField resignFirstResponder];
+    [self.commentField resignFirstResponder];
+    self.doneBar.hidden = YES;
     [mainDelegate.deckController toggleLeftView];
 }
 - (IBAction)clockButtonTapped:(id)sender{
@@ -141,5 +144,6 @@
     CGPoint scrollPoint = CGPointMake(0.0, 0.0);
     [self.scrollView setContentOffset:scrollPoint animated:YES];
 }
+
 
 @end

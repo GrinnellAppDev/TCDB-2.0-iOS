@@ -54,7 +54,7 @@
             [self alertStatus:@"Please enter both Username and Password" :@"Login Failed!"];
         } else {
             NSString *post =[[NSString alloc] initWithFormat:@"login_username=%@&login_password=%@",self.username.text, self.password.text];
-            NSLog(@"PostData: %@",post);
+            //NSLog(@"PostData: %@",post);
             
             NSURL *url=[NSURL URLWithString:@"http://tcdb.grinnell.edu/"];
             
@@ -66,41 +66,38 @@
             [request setURL:url];
             [request setHTTPMethod:@"POST"];
             [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-            [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"application/html" forHTTPHeaderField:@"Accept"];
             [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
             [request setHTTPBody:postData];
-            
-           // [NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
+//            [NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
             
             NSError *error = [[NSError alloc] init];
             NSHTTPURLResponse *response = nil;
             NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
             
-            NSLog(@"Response code: %d", [response statusCode]);
+            //NSLog(@"Response code: %d", [response statusCode]);
             if ([response statusCode] >=200 && [response statusCode] <300)
             {
                 NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-                NSLog(@"Response ==> %@", responseData);
+               // NSLog(@"Response ==> %@", responseData);
                 
-                SBJsonParser *jsonParser = [SBJsonParser new];
-                NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:responseData error:nil];
-                NSLog(@"%@",jsonData);
-                NSInteger success = [(NSNumber *) [jsonData objectForKey:@"success"] integerValue];
-                NSLog(@"%d",success);
+                NSInteger success;
+                if ([responseData rangeOfString:@"Displaying who is logged in"].location == NSNotFound)
+                    success = 0;
+                else
+                    success = 1;
                 
-                // MANUALLY FORCE SUCCESS
-                //success = 1;
                 if(success == 1)
                 {
-                    NSLog(@"Login SUCCESS");
+                    //NSLog(@"Login SUCCESS");
                    // [self alertStatus:@"Logged in Successfully." :@"Login Success!"];
                     mainDelegate.deckController.centerController = mainDelegate.home;
                     mainDelegate.deckController.leftController = mainDelegate.menu;
                     
                 } else {
                     
-                    NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
-                    [self alertStatus:error_msg :@"Login Failed!"];
+                    //NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
+                    [self alertStatus:nil :@"Login Failed!"];
                 }
                 
             } else {

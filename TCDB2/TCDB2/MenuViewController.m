@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    menuArray = [[NSMutableArray alloc] initWithObjects:@"Home", @"Profile", @"\t\t\t\t\tUpdate", @"Combo", @"Subs", @"Tools", @"Wiki", @"OldWiki", @"Total Hours", @"Etime", @"Handbook", nil];
+    menuArray = [[NSMutableArray alloc] initWithObjects:@"Home", @"Profile", @"\t\t\t\t\tUpdate", @"Combo", @"Subs", @"Tools", @"Wiki", @"OldWiki", @"Total Hours", @"Etime", @"Handbook", @"Log Out", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,6 +75,10 @@
         StaticPagesViewController *staticPage = [[StaticPagesViewController alloc] initWithNibName:@"StaticPagesViewController" bundle:nil];
         mainDelegate.deckController.centerController = staticPage;
     }
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Log Out"]){
+        mainDelegate.deckController.centerController = mainDelegate.login;
+    mainDelegate.login.password.text = nil;
+}
     [mainDelegate.deckController closeLeftView];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
