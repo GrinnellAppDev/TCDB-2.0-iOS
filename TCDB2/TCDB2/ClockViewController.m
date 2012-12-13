@@ -43,9 +43,19 @@
     self.dateField.text = formattedDate;
     [dateFormatter  setDateFormat:@"HH:mm"];
     formattedDate = [dateFormatter stringFromDate:[NSDate date]];
-    self.startTimeField.text = formattedDate;
-    self.endTimeField.hidden = YES;
-    self.endTimeLabel.hidden = YES;
+    // if (clockedIn?)
+    if (NO){
+        self.clockLabel.text = @"Clock Out";
+        self.endTimeField.hidden = NO;
+        self.endTimeLabel.hidden = NO;
+        self.endTimeField.text = formattedDate;
+    }
+    else{
+        self.clockLabel.text = @"Clock In";
+        self.endTimeField.hidden = YES;
+        self.endTimeLabel.hidden = YES;
+        self.startTimeField.text = formattedDate;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,18 +134,18 @@
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification {
     if(self.activeView){
-    NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
-    self.scrollView.contentInset = contentInsets;
-    self.scrollView.scrollIndicatorInsets = contentInsets;
-    
-    // If active text field is hidden by keyboard, scroll it so it's visible
-    double offset = kbSize.height/2;
-    offset = self.commentField.frame.origin.y - 44;
-    CGPoint scrollPoint = CGPointMake(0.0, offset);
-    [self.scrollView setContentOffset:scrollPoint animated:YES];
+        NSDictionary* info = [aNotification userInfo];
+        CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+        
+        UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+        self.scrollView.contentInset = contentInsets;
+        self.scrollView.scrollIndicatorInsets = contentInsets;
+        
+        // If active text field is hidden by keyboard, scroll it so it's visible
+        double offset = kbSize.height/2;
+        offset = self.commentField.frame.origin.y - 44;
+        CGPoint scrollPoint = CGPointMake(0.0, offset);
+        [self.scrollView setContentOffset:scrollPoint animated:YES];
     }
 }
 
@@ -144,6 +154,5 @@
     CGPoint scrollPoint = CGPointMake(0.0, 0.0);
     [self.scrollView setContentOffset:scrollPoint animated:YES];
 }
-
 
 @end

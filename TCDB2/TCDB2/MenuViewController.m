@@ -28,8 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    menuArray = [[NSMutableArray alloc] initWithObjects:@"Home", @"Profile", @"\t\t\t\t\tUpdate", @"Combo", @"Subs", @"Tools", @"Wiki", @"OldWiki", @"Total Hours", @"Etime", @"Handbook", @"Log Out", nil];
+    menuArray = [[NSMutableArray alloc] initWithObjects:@"Home", @"Profile", @"\t\t\t\t\tUpdate", @"Timesheet", @"Combo", @"Subs", @"Tools", @"Wiki", @"OldWiki", @"Total Hours", @"Etime", @"Handbook", @"Log Out", nil];
 }
+
+    //mainDelegate.deckController.centerController.nibName
 
 - (void)didReceiveMemoryWarning
 {
@@ -73,7 +75,48 @@
         mainDelegate.deckController.centerController = mainDelegate.home;
     else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Combo"]){
         StaticPagesViewController *staticPage = [[StaticPagesViewController alloc] initWithNibName:@"StaticPagesViewController" bundle:nil];
+        staticPage.urlLink = @"combo";
         mainDelegate.deckController.centerController = staticPage;
+    }
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Timesheet"]){
+        //
+        // NOTE!!!
+        // THIS SHOULD NOT ACTUALLY BE A STATIC PAGE, SINCE IT INCLUDES ADD/DELETE SHIFTS
+        // THE NON-STATIC VERSION CURRENTLY EXISTS AT timesheet
+        //
+        StaticPagesViewController *staticPage = [[StaticPagesViewController alloc] initWithNibName:@"StaticPagesViewController" bundle:nil];
+        staticPage.urlLink = @"combinedtimesheet";
+        mainDelegate.deckController.centerController = staticPage;
+    }
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Total Hours"]){
+        StaticPagesViewController *staticPage = [[StaticPagesViewController alloc] initWithNibName:@"StaticPagesViewController" bundle:nil];
+        staticPage.urlLink = @"total_hours";
+        mainDelegate.deckController.centerController = staticPage;
+    }
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Tools"]){
+        NSURL *url = [NSURL URLWithString:@"http://tcdb.grinnell.edu/tools/"];
+        if (![[UIApplication sharedApplication] openURL:url])
+            NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    }
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Wiki"]){
+        NSURL *url = [NSURL URLWithString:@"http://tcdb.grinnell.edu/wiki/"];
+        if (![[UIApplication sharedApplication] openURL:url])
+            NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    }
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"OldWiki"]){
+        NSURL *url = [NSURL URLWithString:@"http://tcdb.grinnell.edu/oldwiki/"];
+        if (![[UIApplication sharedApplication] openURL:url])
+            NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    }
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Handbook"]){
+        NSURL *url = [NSURL URLWithString:@"http://tcdb.grinnell.edu/wiki/bin/view/TC+Handbook/WebHome"];
+        if (![[UIApplication sharedApplication] openURL:url])
+            NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    }
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Etime"]){
+        NSURL *url = [NSURL URLWithString:@"https://eetime27.adphc.com/bm9e/applications/wtk/html/ess/logon.jsp"];
+        if (![[UIApplication sharedApplication] openURL:url])
+            NSLog(@"%@%@",@"Failed to open url:",[url description]);
     }
     else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Log Out"]){
         mainDelegate.deckController.centerController = mainDelegate.login;

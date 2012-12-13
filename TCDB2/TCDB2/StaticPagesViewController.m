@@ -22,7 +22,7 @@
     AppDelegate *mainDelegate;
 }
 
-@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, webView;
+@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, webView, urlLink;
 //Do some initialization of our own
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
@@ -35,7 +35,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSURL *urlString = [[NSURL alloc] initWithString:@"http://tcdb.grinnell.edu/combo.php"];
+    NSString *url = [[NSString alloc] initWithFormat:@"http://tcdb.grinnell.edu/%@.php", urlLink];
+    NSURL *urlString = [[NSURL alloc] initWithString:url];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlString];
     NSData *returnData = [NSURLConnection
                           sendSynchronousRequest:urlRequest

@@ -47,7 +47,7 @@
     [alertView show];
 }
 
-- (IBAction)goButtonTapped:(id)sender{
+- (void)go{
     @try {
         
         if([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""] ) {
@@ -69,7 +69,6 @@
             [request setValue:@"application/html" forHTTPHeaderField:@"Accept"];
             [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
             [request setHTTPBody:postData];
-//            [NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
             
             NSError *error = [[NSError alloc] init];
             NSHTTPURLResponse *response = nil;
@@ -79,7 +78,7 @@
             if ([response statusCode] >=200 && [response statusCode] <300)
             {
                 NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-               // NSLog(@"Response ==> %@", responseData);
+                // NSLog(@"Response ==> %@", responseData);
                 
                 NSInteger success;
                 if ([responseData rangeOfString:@"Displaying who is logged in"].location == NSNotFound)
@@ -90,7 +89,7 @@
                 if(success == 1)
                 {
                     //NSLog(@"Login SUCCESS");
-                   // [self alertStatus:@"Logged in Successfully." :@"Login Success!"];
+                    // [self alertStatus:@"Logged in Successfully." :@"Login Success!"];
                     mainDelegate.deckController.centerController = mainDelegate.home;
                     mainDelegate.deckController.leftController = mainDelegate.menu;
                     
@@ -110,20 +109,20 @@
         NSLog(@"Exception: %@", e);
         [self alertStatus:@"Login Failed." :@"Login Failed!"];
     }
-    
-    
-    
-    
-    
-    /*
-    
-NSMutableData *responseData = [NSMutableData data];
+}
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://tcdb.grinnell.edu/index.php"]];
 
-NSString *params = [[NSString alloc] initWithFormat:@"user=%@&pass=%@", self.username.text, self.password.text];
-[request setHTTPMethod:@"POST"];
-[request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
-[[NSURLConnection alloc] initWithRequest:request delegate:self];*/
+- (IBAction)goButtonTapped:(id)sender{
+    [self go];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == self.password) {
+        [theTextField resignFirstResponder];
+        [self go];
+    } else if (theTextField == self.username) {
+        [self.password becomeFirstResponder];
+    }
+    return YES;
 }
 @end
