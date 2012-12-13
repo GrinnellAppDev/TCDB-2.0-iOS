@@ -9,6 +9,8 @@
 #import "MenuViewController.h"
 #import "AppDelegate.h"
 #import "StaticPagesViewController.h"
+#import "ProfileViewController.h"
+
 @interface MenuViewController ()
 
 @end
@@ -77,6 +79,10 @@
         StaticPagesViewController *staticPage = [[StaticPagesViewController alloc] initWithNibName:@"StaticPagesViewController" bundle:nil];
         staticPage.urlLink = @"combo";
         mainDelegate.deckController.centerController = staticPage;
+    }
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Profile"]){
+        ProfileViewController *profilePage = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
+        mainDelegate.deckController.centerController = profilePage;
     }
     else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Timesheet"]){
         //

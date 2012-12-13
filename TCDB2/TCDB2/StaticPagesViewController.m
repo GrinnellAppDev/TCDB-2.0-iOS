@@ -7,7 +7,6 @@
 //
 
 #import "StaticPagesViewController.h"
-#import "HomeViewController.h"
 #import "AppDelegate.h"
 #import "ClockViewController.h"
 #import "ScheduleViewController.h"

@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 GrinnellAppDev. All rights reserved.
 //
 
-#import "HomeViewController.h"
 #import "AppDelegate.h"
 #import "ClockViewController.h"
 #import "ScheduleViewController.h"
