@@ -17,7 +17,7 @@
 @implementation ProfileViewController {
     AppDelegate *mainDelegate;
 }
-@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, selectedPerson;
+@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, selectedPerson, table;
 //Do some initialization of our own
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
@@ -36,12 +36,10 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.selectedPerson.name = @"IT'S ME!";
-    //self.selectedPerson.profilePic = [UIImage alloc] ini appbar.time.rest.png;
+   
     NSArray *objects = [[NSArray alloc] initWithObjects:@"tremblay", @"tremblay@grinnell.edu", @"425-495-6425", @"4650", @"TC", @"S14", nil];
     NSArray *keys = [[NSArray alloc] initWithObjects:@"username", @"email", @"phone", @"box", @"rank", @"graduation", nil];
     NSArray *shifts = [[NSArray alloc] initWithObjects:@"Fri, Dec 14, 09:00 - 11:00", @"Sat, Dec 15, 09:00 - 11:00", @"Sun, Dec 15, 12:00 - 14:00", nil];
@@ -51,10 +49,27 @@
     self.selectedPerson.attributeVals = [[NSMutableArray alloc] initWithArray:objects];
     self.selectedPerson.upcomingShifts = [[NSMutableArray alloc] initWithArray:shifts];
     self.selectedPerson.upcomingShiftLocations = [[NSMutableArray alloc] initWithArray:locations];
+    self.selectedPerson.name = @"IT'S ME!";
+    self.selectedPerson.profilePic = [UIImage imageNamed:@"appbar.time.rest.png"];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(100, 50, 300, 30);
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor blackColor];
+    label.font = [UIFont boldSystemFontOfSize:18];
+    label.text = self.selectedPerson.name;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 80, 80)];
+    imageView.image = self.selectedPerson.profilePic;
+    // Create header view and add label as a subview
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    [view addSubview:imageView];
+    [view addSubview:label];
+    table.tableHeaderView = view;
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -67,37 +82,16 @@
 }
 
 #pragma mark Table view data source
-
-- (UIView *)tableView:(id)tableView viewForHeaderInSection:(NSInteger)section{
-    //    if (section == 0){
-    // Create label with section title
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(20, 6, 300, 30);
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor blackColor];
-    label.font = [UIFont boldSystemFontOfSize:20];
-    label.text = self.selectedPerson.name;
-    
-    // Create header view and add label as a subview
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
-    [view addSubview:label];
-    return view;
-    //  }
-    //return nil;
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 2;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     if (section == 0)
         return 6;
     else if (section == 1)
-        //return numberOfUpcomingShifts
         return self.selectedPerson.upcomingShifts.count;
     else return 0;
 }
@@ -105,7 +99,6 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
