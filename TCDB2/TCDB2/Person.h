@@ -14,4 +14,5 @@
 @property (nonatomic, strong) NSMutableArray *attributes;
 @property (nonatomic, strong) NSMutableArray *attributeVals;
 @property (nonatomic, strong) NSMutableArray *upcomingShifts;
+@property (nonatomic, strong) NSMutableArray *upcomingShiftLocations;
 @end

@@ -9,5 +9,5 @@
 #import "Person.h"
 
 @implementation Person
-@synthesize name, profilePic, attributes, attributeVals, upcomingShifts;
+@synthesize name, profilePic, attributes, attributeVals, upcomingShifts, upcomingShiftLocations;
 @end

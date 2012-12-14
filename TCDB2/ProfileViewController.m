@@ -44,10 +44,13 @@
     //self.selectedPerson.profilePic = [UIImage alloc] ini appbar.time.rest.png;
     NSArray *objects = [[NSArray alloc] initWithObjects:@"tremblay", @"tremblay@grinnell.edu", @"425-495-6425", @"4650", @"TC", @"S14", nil];
     NSArray *keys = [[NSArray alloc] initWithObjects:@"username", @"email", @"phone", @"box", @"rank", @"graduation", nil];
+    NSArray *shifts = [[NSArray alloc] initWithObjects:@"Fri, Dec 14, 09:00 - 11:00", @"Sat, Dec 15, 09:00 - 11:00", @"Sun, Dec 15, 12:00 - 14:00", nil];
+    NSArray *locations = [[NSArray alloc] initWithObjects:@"AV Center 2", @"AV Center 2", @"Helpdesk", nil];
     self.selectedPerson = [[Person alloc] init];
     self.selectedPerson.attributes = [[NSMutableArray alloc] initWithArray:keys];
     self.selectedPerson.attributeVals = [[NSMutableArray alloc] initWithArray:objects];
-    
+    self.selectedPerson.upcomingShifts = [[NSMutableArray alloc] initWithArray:shifts];
+    self.selectedPerson.upcomingShiftLocations = [[NSMutableArray alloc] initWithArray:locations];
 }
 
 - (void)viewDidUnload
@@ -65,6 +68,24 @@
 
 #pragma mark Table view data source
 
+- (UIView *)tableView:(id)tableView viewForHeaderInSection:(NSInteger)section{
+    //    if (section == 0){
+    // Create label with section title
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(20, 6, 300, 30);
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor blackColor];
+    label.font = [UIFont boldSystemFontOfSize:20];
+    label.text = self.selectedPerson.name;
+    
+    // Create header view and add label as a subview
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
+    [view addSubview:label];
+    return view;
+    //  }
+    //return nil;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 2;
@@ -75,9 +96,10 @@
     // Return the number of rows in the section.
     if (section == 0)
         return 6;
-    else
+    else if (section == 1)
         //return numberOfUpcomingShifts
-        return 1;
+        return self.selectedPerson.upcomingShifts.count;
+    else return 0;
 }
 
 
@@ -92,16 +114,20 @@
     }
     
     // Configure the cell...
-    NSLog(@"%@", [self.selectedPerson.attributeVals objectAtIndex:indexPath.row]);
-    cell.textLabel.text = [self.selectedPerson.attributeVals objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [self.selectedPerson.attributes objectAtIndex:indexPath.row];
-    
+    if (indexPath.section == 0){
+        cell.textLabel.text = [self.selectedPerson.attributeVals objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [self.selectedPerson.attributes objectAtIndex:indexPath.row];
+    }
+    else{
+        cell.textLabel.text = [self.selectedPerson.upcomingShifts objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [self.selectedPerson.upcomingShiftLocations objectAtIndex:indexPath.row];
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 
 # pragma mark Toolbar Methods
 - (IBAction)menuButtonTapped:(id)sender{
