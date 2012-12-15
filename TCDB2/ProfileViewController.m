@@ -12,7 +12,7 @@
 #import "ScheduleViewController.h"
 #import "DirectoryViewController.h"
 #import "ShiftsViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ProfileViewController {
     AppDelegate *mainDelegate;
@@ -50,19 +50,19 @@
     self.selectedPerson.upcomingShifts = [[NSMutableArray alloc] initWithArray:shifts];
     self.selectedPerson.upcomingShiftLocations = [[NSMutableArray alloc] initWithArray:locations];
     self.selectedPerson.name = @"IT'S ME!";
-    self.selectedPerson.profilePic = [UIImage imageNamed:@"appbar.time.rest.png"];
+    self.selectedPerson.profilePic = [UIImage imageNamed:@"default_profile.png"];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    // Create header view and add name/picture as subviews
     UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(100, 50, 300, 30);
+    label.frame = CGRectMake(120, 50, 300, 30);
     label.backgroundColor = [UIColor clearColor];
     label.textColor = [UIColor blackColor];
     label.font = [UIFont boldSystemFontOfSize:18];
     label.text = self.selectedPerson.name;
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 80, 80)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 90, 90)];
     imageView.image = self.selectedPerson.profilePic;
-    // Create header view and add label as a subview
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
     [view addSubview:imageView];
     [view addSubview:label];
@@ -115,10 +115,43 @@
         cell.textLabel.text = [self.selectedPerson.upcomingShifts objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [self.selectedPerson.upcomingShiftLocations objectAtIndex:indexPath.row];
     }
+    UIDevice *device = [UIDevice currentDevice];
+    if ([[device model] isEqualToString:@"iPhone"] && [cell.detailTextLabel.text isEqualToString:@"phone"]){
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    else if ([cell.detailTextLabel.text isEqualToString:@"email"]){
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    else{
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"email"]){
+        if([MFMailComposeViewController canSendMail]) {
+            MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+            mailViewController.mailComposeDelegate = self;
+            
+            mailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+            [mailViewController setToRecipients:[NSArray arrayWithObject:[self.selectedPerson.attributeVals objectAtIndex:indexPath.row]]];
+            
+            [self presentModalViewController:mailViewController animated:YES];
+        }
+    }
+    else if (indexPath.section == 0 && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"phone"]){
+        NSString *url = [[NSString alloc] initWithFormat:@"tel:%@", [self.selectedPerson.attributeVals objectAtIndex:indexPath.row]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

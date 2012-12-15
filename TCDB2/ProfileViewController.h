@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
+#import <MessageUI/MessageUI.h>
 #import "Person.h"
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController <MFMailComposeViewControllerDelegate>
 - (IBAction)menuButtonTapped:(id)sender;
 - (IBAction)directoryButtonTapped:(id)sender;
 - (IBAction)shiftsButtonTapped:(id)sender;

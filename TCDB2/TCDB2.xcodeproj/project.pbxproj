@@ -44,6 +44,8 @@
 		3BDA60FA166D57980072C5AD /* notselectedcheckbox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BDA60F8166D57980072C5AD /* notselectedcheckbox.jpg */; };
 		E177DC6E167A68190067A41F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E177DC6C167A68180067A41F /* ProfileViewController.m */; };
 		E177DC6F167A68190067A41F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E177DC6D167A68180067A41F /* ProfileViewController.xib */; };
+		E1966754167CEA9D00F77BA1 /* default_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = E1966753167CEA9D00F77BA1 /* default_profile.png */; };
+		E196675B167CEEEA00F77BA1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E196675A167CEEEA00F77BA1 /* MessageUI.framework */; };
 		E1FD3712167A6DDC00052A2F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FD3711167A6DDC00052A2F /* Person.m */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +102,8 @@
 		E177DC6B167A68180067A41F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
 		E177DC6C167A68180067A41F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
 		E177DC6D167A68180067A41F /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = ../ProfileViewController.xib; sourceTree = "<group>"; };
+		E1966753167CEA9D00F77BA1 /* default_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_profile.png; path = Images/default_profile.png; sourceTree = "<group>"; };
+		E196675A167CEEEA00F77BA1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E1FD3710167A6DDC00052A2F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		E1FD3711167A6DDC00052A2F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E196675B167CEEEA00F77BA1 /* MessageUI.framework in Frameworks */,
 				3BD52F2B1667F4CC007AE676 /* QuartzCore.framework in Frameworks */,
 				3B81D02F166700B500AB5269 /* UIKit.framework in Frameworks */,
 				3B81D031166700B500AB5269 /* Foundation.framework in Frameworks */,
@@ -122,6 +127,7 @@
 		3B3E4BA8166A74770099DA35 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E1966753167CEA9D00F77BA1 /* default_profile.png */,
 				3BDA60F7166D57980072C5AD /* selectedcheckbox.jpg */,
 				3BDA60F8166D57980072C5AD /* notselectedcheckbox.jpg */,
 				3B7492F8166A765900BAC7E4 /* appbar.numberlist.rest.png */,
@@ -153,6 +159,7 @@
 		3B81D02D166700B500AB5269 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E196675A167CEEEA00F77BA1 /* MessageUI.framework */,
 				3BD52F2A1667F4CC007AE676 /* QuartzCore.framework */,
 				3B81D02E166700B500AB5269 /* UIKit.framework */,
 				3B81D030166700B500AB5269 /* Foundation.framework */,
@@ -306,6 +313,7 @@
 				3BD6AC9C167125B60081A227 /* StaticPagesViewController.xib in Resources */,
 				3BD6ACA516712DE60081A227 /* LoginViewController.xib in Resources */,
 				E177DC6F167A68190067A41F /* ProfileViewController.xib in Resources */,
+				E1966754167CEA9D00F77BA1 /* default_profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
