@@ -11,15 +11,16 @@
 #import "HomeViewController.h"
 #import "LoginViewController.h"
 #import "MenuViewController.h"
+#import "Person.h"
 
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) HomeViewController *home;
 @property (strong, nonatomic) LoginViewController *login;
 @property (strong, nonatomic) MenuViewController *menu;
 @property (strong, nonatomic) IIViewDeckController* deckController;
+@property (strong, nonatomic) Person *me;
 
 @end

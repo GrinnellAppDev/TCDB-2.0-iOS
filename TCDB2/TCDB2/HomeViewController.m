@@ -32,7 +32,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    NSArray *objects = [[NSArray alloc] initWithObjects:@"tremblay", @"tremblay@grinnell.edu", @"425-495-6425", @"4650", @"TC", @"S14", nil];
+    NSArray *keys = [[NSArray alloc] initWithObjects:@"username", @"email", @"phone", @"box", @"rank", @"graduation", nil];
+    NSArray *shifts = [[NSArray alloc] initWithObjects:@"Fri, Dec 14, 09:00 - 11:00", @"Sat, Dec 15, 09:00 - 11:00", @"Sun, Dec 15, 12:00 - 14:00", nil];
+    NSArray *locations = [[NSArray alloc] initWithObjects:@"AV Center 2", @"AV Center 2", @"Helpdesk", nil];
+    mainDelegate.me.attributes = [[NSMutableArray alloc] initWithArray:keys];
+    mainDelegate.me.attributeVals = [[NSMutableArray alloc] initWithArray:objects];
+    mainDelegate.me.upcomingShifts = [[NSMutableArray alloc] initWithArray:shifts];
+    mainDelegate.me.upcomingShiftLocations = [[NSMutableArray alloc] initWithArray:locations];
+    mainDelegate.me.name = @"Colin Tremblay";
+    mainDelegate.me.profilePic = [UIImage imageNamed:@"default_profile.png"];
 }
 
 - (void)didReceiveMemoryWarning

@@ -39,24 +39,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-   
-    NSArray *objects = [[NSArray alloc] initWithObjects:@"tremblay", @"tremblay@grinnell.edu", @"425-495-6425", @"4650", @"TC", @"S14", nil];
-    NSArray *keys = [[NSArray alloc] initWithObjects:@"username", @"email", @"phone", @"box", @"rank", @"graduation", nil];
-    NSArray *shifts = [[NSArray alloc] initWithObjects:@"Fri, Dec 14, 09:00 - 11:00", @"Sat, Dec 15, 09:00 - 11:00", @"Sun, Dec 15, 12:00 - 14:00", nil];
-    NSArray *locations = [[NSArray alloc] initWithObjects:@"AV Center 2", @"AV Center 2", @"Helpdesk", nil];
-    self.selectedPerson = [[Person alloc] init];
-    self.selectedPerson.attributes = [[NSMutableArray alloc] initWithArray:keys];
-    self.selectedPerson.attributeVals = [[NSMutableArray alloc] initWithArray:objects];
-    self.selectedPerson.upcomingShifts = [[NSMutableArray alloc] initWithArray:shifts];
-    self.selectedPerson.upcomingShiftLocations = [[NSMutableArray alloc] initWithArray:locations];
-    self.selectedPerson.name = @"IT'S ME!";
-    self.selectedPerson.profilePic = [UIImage imageNamed:@"default_profile.png"];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     // Create header view and add name/picture as subviews
     UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(120, 50, 300, 30);
+    label.frame = CGRectMake(120, 40, 200, 30);
     label.backgroundColor = [UIColor clearColor];
     label.textColor = [UIColor blackColor];
     label.font = [UIFont boldSystemFontOfSize:18];

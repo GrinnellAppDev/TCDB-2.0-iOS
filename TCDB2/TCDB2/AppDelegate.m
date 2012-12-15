@@ -12,9 +12,10 @@
 #import "MenuViewController.h"
 #import "ClockViewController.h"
 #import "LoginViewController.h"
+#import "Person.h"
 
 @implementation AppDelegate
-@synthesize window, deckController, home, login, menu;
+@synthesize window, deckController, home, login, menu, me;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -28,6 +29,7 @@
     
     self.window.rootViewController = self.deckController;
     [self.window makeKeyAndVisible];
+    self.me = [[Person alloc] init];
     return YES;
 }
 

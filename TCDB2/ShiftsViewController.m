@@ -20,7 +20,7 @@
 @implementation ShiftsViewController {
     AppDelegate *mainDelegate;
 }
-@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton;
+@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, table;
 //Do some initialization of our own
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
@@ -33,6 +33,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Create header view and add title as subview
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 5, 320, 25);
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor blackColor];
+    label.textAlignment = UITextAlignmentCenter;
+    label.font = [UIFont boldSystemFontOfSize:18];
+    label.text = @"Upcoming Shifts";
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
+    [view addSubview:label];
+    table.tableHeaderView = view;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,6 +53,47 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
+    if (section == 0)
+        return mainDelegate.me.upcomingShifts.count;
+    else return 0;
+}
+
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    // Configure the cell...
+
+        cell.textLabel.text = [mainDelegate.me.upcomingShifts objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [mainDelegate.me.upcomingShiftLocations objectAtIndex:indexPath.row];
+    
+
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
 
 # pragma mark Toolbar Methods
 - (IBAction)menuButtonTapped:(id)sender{
