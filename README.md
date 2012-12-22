@@ -6,5 +6,5 @@ After 12 years, the ACM award wining Tech Consultant Database: TCDB (originally 
 
 ## Authors
 
-Colin Tremblay
-Maijid Moujaled
+  *Colin Tremblay
+  *Maijid Moujaled
