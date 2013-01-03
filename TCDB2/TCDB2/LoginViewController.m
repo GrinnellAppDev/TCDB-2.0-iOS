@@ -74,18 +74,18 @@
             NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
             
             //NSLog(@"Response code: %d", [response statusCode]);
-            if ([response statusCode] >=200 && [response statusCode] <300)
+            if ([response statusCode] >= 200 && [response statusCode] < 300)
             {
                 NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
                 // NSLog(@"Response ==> %@", responseData);
                 
                 NSInteger success;
-                if ([responseData rangeOfString:@"Displaying who is logged in"].location == NSNotFound)
+                if (NSNotFound == [responseData rangeOfString:@"Displaying who is logged in"].location)
                     success = 0;
                 else
                     success = 1;
                 
-                if(success == 1)
+                if(1 == success)
                 {
                     //NSLog(@"Login SUCCESS");
                     // [self alertStatus:@"Logged in Successfully." :@"Login Success!"];

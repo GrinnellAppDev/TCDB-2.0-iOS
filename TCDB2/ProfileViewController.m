@@ -13,11 +13,13 @@
 #import "DirectoryViewController.h"
 #import "ShiftsViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "EditViewController.h"
 
 @implementation ProfileViewController {
     AppDelegate *mainDelegate;
+    EditViewController *editView;
 }
-@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, selectedPerson, table;
+@synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, selectedPerson, table, editing, editAttr, editVal;
 //Do some initialization of our own
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
@@ -35,11 +37,15 @@
 }
 
 #pragma mark - View lifecycle
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    if (editing){
+        editView = [[EditViewController alloc] initWithNibName:@"EditViewController" bundle:nil];
+        mainDelegate.deckController.rightController = editView;
+        mainDelegate.deckController.rightLedge = 0;
+    }
 }
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     // Create header view and add name/picture as subviews
@@ -59,14 +65,15 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    if (mainDelegate.deckController.rightControllerIsOpen)
+        [mainDelegate.deckController toggleRightView];
+    mainDelegate.deckController.rightController = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (UIInterfaceOrientationPortrait == interfaceOrientation);
 }
 
 #pragma mark Table view data source
@@ -77,9 +84,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    if (section == 0)
-        return 6;
-    else if (section == 1)
+    if (0 == section)
+        if (self.selectedPerson == mainDelegate.me)
+            return 7;
+        else return 6;
+    else if (1 == section)
         return self.selectedPerson.upcomingShifts.count;
     else return 0;
 }
@@ -90,12 +99,12 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    if (nil == cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
-    if (indexPath.section == 0){
+    if (0 == indexPath.section){
         cell.textLabel.text = [self.selectedPerson.attributeVals objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [self.selectedPerson.attributes objectAtIndex:indexPath.row];
     }
@@ -103,6 +112,12 @@
         cell.textLabel.text = [self.selectedPerson.upcomingShifts objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [self.selectedPerson.upcomingShiftLocations objectAtIndex:indexPath.row];
     }
+    
+    if(editing && 0 == indexPath.section){
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    else{
     UIDevice *device = [UIDevice currentDevice];
     if ([[device model] isEqualToString:@"iPhone"] && [cell.detailTextLabel.text isEqualToString:@"phone"]){
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
@@ -116,7 +131,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    
+    }
     return cell;
 }
 
@@ -125,7 +140,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"email"]){
+    if(editing){
+        editView.value.text = [self.selectedPerson.attributeVals objectAtIndex:indexPath.row];
+        editView.attribute.text = [self.selectedPerson.attributes objectAtIndex:indexPath.row];
+        [mainDelegate.deckController toggleRightView];
+    }
+    else{
+    if (0 == indexPath.section && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"email"]){
         if([MFMailComposeViewController canSendMail]) {
             MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
             mailViewController.mailComposeDelegate = self;
@@ -136,9 +157,10 @@
             [self presentModalViewController:mailViewController animated:YES];
         }
     }
-    else if (indexPath.section == 0 && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"phone"]){
+    else if (0 == indexPath.section && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"phone"]){
         NSString *url = [[NSString alloc] initWithFormat:@"tel:%@", [self.selectedPerson.attributeVals objectAtIndex:indexPath.row]];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

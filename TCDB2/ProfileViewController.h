@@ -25,4 +25,8 @@
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *clockButton;
 @property (nonatomic, weak) IBOutlet UITableView *table;
 @property (nonatomic, strong) Person *selectedPerson;
+@property (nonatomic, assign) BOOL editing;
+@property (nonatomic, strong) NSString *editAttr;
+@property (nonatomic, strong) NSString *editVal;
+
 @end

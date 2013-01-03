@@ -17,6 +17,8 @@
 		3B74930B166A77CB00BAC7E4 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B749309166A77CB00BAC7E4 /* MenuViewController.m */; };
 		3B74930C166A77CB00BAC7E4 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B74930A166A77CB00BAC7E4 /* MenuViewController.xib */; };
 		3B74930E166A77E400BAC7E4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B74930D166A77E400BAC7E4 /* HomeViewController.xib */; };
+		3B75572E169542040098C02D /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B75572C169542020098C02D /* EditViewController.m */; };
+		3B75572F169542040098C02D /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B75572D169542030098C02D /* EditViewController.xib */; };
 		3B8079B5166A82A0005FB31A /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8079B3166A82A0005FB31A /* ClockViewController.m */; };
 		3B8079B6166A82A0005FB31A /* ClockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8079B4166A82A0005FB31A /* ClockViewController.xib */; };
 		3B8079BB166A8A45005FB31A /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8079B9166A8A44005FB31A /* ScheduleViewController.m */; };
@@ -63,6 +65,9 @@
 		3B749309166A77CB00BAC7E4 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		3B74930A166A77CB00BAC7E4 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		3B74930D166A77E400BAC7E4 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		3B75572B169542000098C02D /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		3B75572C169542020098C02D /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		3B75572D169542030098C02D /* EditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
 		3B8079B2166A82A0005FB31A /* ClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockViewController.h; sourceTree = "<group>"; };
 		3B8079B3166A82A0005FB31A /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
 		3B8079B4166A82A0005FB31A /* ClockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClockViewController.xib; sourceTree = "<group>"; };
@@ -195,6 +200,9 @@
 				E177DC6B167A68180067A41F /* ProfileViewController.h */,
 				E177DC6C167A68180067A41F /* ProfileViewController.m */,
 				E177DC6D167A68180067A41F /* ProfileViewController.xib */,
+				3B75572B169542000098C02D /* EditViewController.h */,
+				3B75572C169542020098C02D /* EditViewController.m */,
+				3B75572D169542030098C02D /* EditViewController.xib */,
 				3B749308166A77CB00BAC7E4 /* MenuViewController.h */,
 				3B749309166A77CB00BAC7E4 /* MenuViewController.m */,
 				3B74930A166A77CB00BAC7E4 /* MenuViewController.xib */,
@@ -314,6 +322,7 @@
 				3BD6ACA516712DE60081A227 /* LoginViewController.xib in Resources */,
 				E177DC6F167A68190067A41F /* ProfileViewController.xib in Resources */,
 				E1966754167CEA9D00F77BA1 /* default_profile.png in Resources */,
+				3B75572F169542040098C02D /* EditViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +347,7 @@
 				3BD6ACA416712DE60081A227 /* LoginViewController.m in Sources */,
 				E177DC6E167A68190067A41F /* ProfileViewController.m in Sources */,
 				E1FD3712167A6DDC00052A2F /* Person.m in Sources */,
+				3B75572E169542040098C02D /* EditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +387,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -399,7 +409,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

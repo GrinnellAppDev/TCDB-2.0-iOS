@@ -62,7 +62,7 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    if (nil == cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
@@ -83,6 +83,13 @@
     else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Profile"]){
         ProfileViewController *profilePage = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
         profilePage.selectedPerson = mainDelegate.me;
+        profilePage.editing = FALSE;
+        mainDelegate.deckController.centerController = profilePage;
+    }
+    else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"\t\t\t\t\tUpdate"]){
+        ProfileViewController *profilePage = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
+        profilePage.selectedPerson = mainDelegate.me;
+        profilePage.editing = TRUE;
         mainDelegate.deckController.centerController = profilePage;
     }
     else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Timesheet"]){
