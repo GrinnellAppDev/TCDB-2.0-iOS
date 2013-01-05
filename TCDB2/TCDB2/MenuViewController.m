@@ -33,46 +33,34 @@
     menuArray = [[NSMutableArray alloc] initWithObjects:@"Home", @"Profile", @"\t\t\t\t\tUpdate", @"Timesheet", @"Combo", @"Subs", @"Tools", @"Wiki", @"OldWiki", @"Total Hours", @"Etime", @"Handbook", @"Log Out", nil];
 }
 
-    //mainDelegate.deckController.centerController.nibName
+//mainDelegate.deckController.centerController.nibName
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 #pragma mark Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return menuArray.count;
 }
 
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (nil == cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    // Configure the cell...
     cell.textLabel.text = [menuArray objectAtIndex:indexPath.row];
-    
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Home"])
         mainDelegate.deckController.centerController = mainDelegate.home;
     else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Combo"]){
@@ -134,8 +122,8 @@
     }
     else if ([[menuArray objectAtIndex:indexPath.row] isEqualToString:@"Log Out"]){
         mainDelegate.deckController.centerController = mainDelegate.login;
-    mainDelegate.login.password.text = nil;
-}
+        mainDelegate.login.password.text = nil;
+    }
     [mainDelegate.deckController closeLeftView];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

@@ -20,20 +20,20 @@
 @implementation DirectoryViewController {
     AppDelegate *mainDelegate;
 }
+
 @synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, table, people;
-//Do some initialization of our own
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])){
         mainDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     }
     return self;
 }
 
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    // Create dummy data
     Person *person1 = [[Person alloc] init];
     Person *person2 = [[Person alloc] init];
     Person *person3 = [[Person alloc] init];
@@ -43,7 +43,7 @@
     NSArray *peopleArray = [[NSArray alloc] initWithObjects:person1, person2, person3, nil];
     people = [[NSMutableArray alloc] initWithArray:peopleArray];
     
-    // Create header view and add title as subview
+    // Create table header view and add title as subview
     UILabel *label = [[UILabel alloc] init];
     label.frame = CGRectMake(0, 5, 320, 25);
     label.backgroundColor = [UIColor clearColor];
@@ -56,45 +56,35 @@
     table.tableHeaderView = view;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (0 == section)
         return people.count;
     else return 0;
 }
 
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (nil == cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
-    // Configure the cell...
     Person *tempPerson = [people objectAtIndex:indexPath.row];
     cell.textLabel.text = tempPerson.name;
-    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ProfileViewController *profilePage = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
     profilePage.selectedPerson = [people objectAtIndex:indexPath.row];
     profilePage.editing = FALSE;

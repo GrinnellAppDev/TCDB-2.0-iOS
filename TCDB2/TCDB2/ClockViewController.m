@@ -19,16 +19,17 @@
 @implementation ClockViewController {
     AppDelegate *mainDelegate;
 }
+
 @synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, doneButton, activeView, labPicker, scrollView, commentField, labsField, labsArray, doneBar, dateField, startTimeField, endTimeField, endTimeLabel, clockLabel, mentoringSwitch;
-//Do some initialization of our own
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])){
         mainDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     }
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad{
     [super viewDidLoad];
     self.labsArray = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithObjects: @"Helpdesk", @"Helpdesk 2", nil]];
     self.labsField.inputView = self.labPicker;
@@ -59,7 +60,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 # pragma mark Toolbar Methods

@@ -22,18 +22,18 @@
 }
 
 @synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, webView, urlLink;
-//Do some initialization of our own
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])){
         mainDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     }
     return self;
 }
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
+    
     NSString *url = [[NSString alloc] initWithFormat:@"http://tcdb.grinnell.edu/%@.php", urlLink];
     NSURL *urlString = [[NSURL alloc] initWithString:url];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlString];
@@ -50,10 +50,8 @@
     [self.webView loadHTMLString:HTMLData baseURL:[NSURL URLWithString:[NSString stringWithFormat:@"file:/%@//",resourcePath]]];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

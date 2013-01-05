@@ -19,25 +19,22 @@
 @implementation ScheduleViewController {
     AppDelegate *mainDelegate;
 }
+
 @synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton;
-//Do some initialization of our own
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])){
         mainDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 # pragma mark Toolbar Methods

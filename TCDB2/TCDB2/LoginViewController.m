@@ -10,48 +10,47 @@
 #import "AppDelegate.h"
 
 @interface LoginViewController ()
+
 @end
 
 @implementation LoginViewController{
     AppDelegate *mainDelegate;
 }
+
 @synthesize username, password, goButton;
 
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])){
         mainDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
 
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-- (void) alertStatus:(NSString *)msg :(NSString *)title
-{
+
+- (void) alertStatus:(NSString *)msg :(NSString *)title{
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                         message:msg
                                                        delegate:self
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil, nil];
-    
     [alertView show];
 }
 
 - (void)go{
-    @try {
+    @try{
         
-        if([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""] ) {
+        if([self.username.text isEqualToString:@""] || [self.password.text isEqualToString:@""]){
             [self alertStatus:@"Please enter both Username and Password" :@"Login Failed!"];
-        } else {
+        }
+        else{
             NSString *post =[[NSString alloc] initWithFormat:@"login_username=%@&login_password=%@",self.username.text, self.password.text];
             //NSLog(@"PostData: %@",post);
             
@@ -74,8 +73,7 @@
             NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
             
             //NSLog(@"Response code: %d", [response statusCode]);
-            if ([response statusCode] >= 200 && [response statusCode] < 300)
-            {
+            if([response statusCode] >= 200 && [response statusCode] < 300){
                 NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
                 // NSLog(@"Response ==> %@", responseData);
                 
@@ -85,26 +83,26 @@
                 else
                     success = 1;
                 
-                if(1 == success)
-                {
+                if(1 == success){
                     //NSLog(@"Login SUCCESS");
                     // [self alertStatus:@"Logged in Successfully." :@"Login Success!"];
                     mainDelegate.deckController.centerController = mainDelegate.home;
                     mainDelegate.deckController.leftController = mainDelegate.menu;
-                    
-                } else {
-                    
+                }
+                else{
                     //NSString *error_msg = (NSString *) [jsonData objectForKey:@"error_message"];
                     [self alertStatus:nil :@"Login Failed!"];
                 }
                 
-            } else {
-                if (error) NSLog(@"Error: %@", error);
+            }
+            else{
+                if(error)
+                    NSLog(@"Error: %@", error);
                 [self alertStatus:@"Connection Failed" :@"Login Failed!"];
             }
         }
     }
-    @catch (NSException * e) {
+    @catch(NSException * e){
         NSLog(@"Exception: %@", e);
         [self alertStatus:@"Login Failed." :@"Login Failed!"];
     }
@@ -115,13 +113,14 @@
     [self go];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    if (theTextField == self.password) {
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField{
+    if (theTextField == self.password){
         [theTextField resignFirstResponder];
         [self go];
-    } else if (theTextField == self.username) {
-        [self.password becomeFirstResponder];
     }
+    else if (theTextField == self.username)
+        [self.password becomeFirstResponder];
     return YES;
 }
+
 @end

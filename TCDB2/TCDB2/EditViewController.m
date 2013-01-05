@@ -16,10 +16,10 @@
 @implementation EditViewController{
     AppDelegate *mainDelegate;
 }
-@synthesize attribute, value;
+@synthesize attribute, value, parent;
 
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])){
         mainDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     }
     return self;
@@ -27,18 +27,16 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)saveVal:(id)sender{
     [value resignFirstResponder];
     [mainDelegate.me.attributeVals replaceObjectAtIndex:[mainDelegate.me.attributes indexOfObject:attribute.text] withObject:value.text];
-//    [mainDelegate.deckController.centerController reloadInputViews];
+    [parent.table reloadData];
     [mainDelegate.deckController toggleRightView];
 }
 
@@ -51,4 +49,5 @@
     [theTextField resignFirstResponder];
     return YES;
 }
+
 @end

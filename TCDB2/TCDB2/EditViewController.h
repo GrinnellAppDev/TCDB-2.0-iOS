@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProfileViewController.h"
 
 @interface EditViewController : UIViewController
 
@@ -16,5 +17,6 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *value;
 @property (nonatomic, weak) IBOutlet UILabel *attribute;
+@property (nonatomic, weak) ProfileViewController *parent;
 
 @end

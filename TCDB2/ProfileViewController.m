@@ -15,40 +15,39 @@
 #import <QuartzCore/QuartzCore.h>
 #import "EditViewController.h"
 
-@implementation ProfileViewController {
+@implementation ProfileViewController{
     AppDelegate *mainDelegate;
     EditViewController *editView;
 }
+
 @synthesize clockButton, scheduleButton, shiftsButton, directoryButton, menuButton, selectedPerson, table, editing, editAttr, editVal;
-//Do some initialization of our own
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])){
         mainDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     }
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
-- (void)viewDidLoad {
+- (void)viewDidLoad{
     [super viewDidLoad];
     if (editing){
         editView = [[EditViewController alloc] initWithNibName:@"EditViewController" bundle:nil];
         mainDelegate.deckController.rightController = editView;
         mainDelegate.deckController.rightLedge = 0;
+        editView.parent = self;
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    // Create header view and add name/picture as subviews
+    
+    // Create table's header view and add name/picture as subviews
     UILabel *label = [[UILabel alloc] init];
     label.frame = CGRectMake(120, 40, 200, 30);
     label.backgroundColor = [UIColor clearColor];
@@ -70,8 +69,7 @@
     mainDelegate.deckController.rightController = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     // Return YES for supported orientations
     return (UIInterfaceOrientationPortrait == interfaceOrientation);
 }
@@ -82,24 +80,23 @@
     return 2;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // Return the number of rows in the section.
     if (0 == section)
         if (self.selectedPerson == mainDelegate.me)
             return 7;
         else return 6;
-    else if (1 == section)
-        return self.selectedPerson.upcomingShifts.count;
-    else return 0;
+        else if (1 == section)
+            return self.selectedPerson.upcomingShifts.count;
+        else return 0;
 }
 
-
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (nil == cell) {
+    if (nil == cell){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
@@ -118,19 +115,19 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     else{
-    UIDevice *device = [UIDevice currentDevice];
-    if ([[device model] isEqualToString:@"iPhone"] && [cell.detailTextLabel.text isEqualToString:@"phone"]){
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    else if ([cell.detailTextLabel.text isEqualToString:@"email"]){
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    else{
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+        UIDevice *device = [UIDevice currentDevice];
+        if ([[device model] isEqualToString:@"iPhone"] && [cell.detailTextLabel.text isEqualToString:@"phone"]){
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+        else if ([cell.detailTextLabel.text isEqualToString:@"email"]){
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+        else{
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
     }
     return cell;
 }
@@ -139,29 +136,28 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(editing){
         editView.value.text = [self.selectedPerson.attributeVals objectAtIndex:indexPath.row];
         editView.attribute.text = [self.selectedPerson.attributes objectAtIndex:indexPath.row];
         [mainDelegate.deckController toggleRightView];
-//        [mainDelegate.deckController.centerController.navigationController pushViewController:editView animated:YES];
     }
     else{
-    if (0 == indexPath.section && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"email"]){
-        if([MFMailComposeViewController canSendMail]) {
-            MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-            mailViewController.mailComposeDelegate = self;
-            
-            mailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-            [mailViewController setToRecipients:[NSArray arrayWithObject:[self.selectedPerson.attributeVals objectAtIndex:indexPath.row]]];
-            
-            [self presentModalViewController:mailViewController animated:YES];
+        if (0 == indexPath.section && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"email"]){
+            if([MFMailComposeViewController canSendMail]) {
+                MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+                mailViewController.mailComposeDelegate = self;
+                
+                mailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+                [mailViewController setToRecipients:[NSArray arrayWithObject:[self.selectedPerson.attributeVals objectAtIndex:indexPath.row]]];
+                
+                [self presentModalViewController:mailViewController animated:YES];
+            }
         }
-    }
-    else if (0 == indexPath.section && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"phone"]){
-        NSString *url = [[NSString alloc] initWithFormat:@"tel:%@", [self.selectedPerson.attributeVals objectAtIndex:indexPath.row]];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-    }
+        else if (0 == indexPath.section && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"phone"]){
+            NSString *url = [[NSString alloc] initWithFormat:@"tel:%@", [self.selectedPerson.attributeVals objectAtIndex:indexPath.row]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
