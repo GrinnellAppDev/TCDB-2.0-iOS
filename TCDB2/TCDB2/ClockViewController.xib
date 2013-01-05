@@ -4920,9 +4920,10 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 				</array>
 			</object>
 			<object class="IBUIPickerView" id="551006749">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">266</int>
 				<string key="NSFrameSize">{320, 216}</string>
+				<reference key="NSSuperview"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIShowsSelectionIndicator">YES</bool>
 			</object>
@@ -5289,7 +5290,6 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 							<reference ref="434246705"/>
 							<reference ref="605922665"/>
 							<reference ref="52174705"/>
-							<reference ref="688643268"/>
 							<reference ref="289789408"/>
 							<reference ref="294937232"/>
 							<reference ref="45427695"/>
@@ -5297,6 +5297,7 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 							<reference ref="599010424"/>
 							<reference ref="451333444"/>
 							<reference ref="442644145"/>
+							<reference ref="688643268"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>

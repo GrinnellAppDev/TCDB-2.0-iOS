@@ -131,7 +131,8 @@
 }
 
 // Called when the UIKeyboardDidShowNotification is sent.
-- (void)keyboardWasShown:(NSNotification*)aNotification {
+- (void)keyboardWasShown:(NSNotification*)aNotification{
+    mainDelegate.deckController.leftController = nil;
     if(self.activeView){
         NSDictionary* info = [aNotification userInfo];
         CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
@@ -149,7 +150,8 @@
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification {
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification{
+    mainDelegate.deckController.leftController = mainDelegate.menu;
     CGPoint scrollPoint = CGPointMake(0.0, 0.0);
     [self.scrollView setContentOffset:scrollPoint animated:YES];
 }
