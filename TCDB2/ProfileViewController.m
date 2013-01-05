@@ -144,6 +144,7 @@
         editView.value.text = [self.selectedPerson.attributeVals objectAtIndex:indexPath.row];
         editView.attribute.text = [self.selectedPerson.attributes objectAtIndex:indexPath.row];
         [mainDelegate.deckController toggleRightView];
+//        [mainDelegate.deckController.centerController.navigationController pushViewController:editView animated:YES];
     }
     else{
     if (0 == indexPath.section && [[self.selectedPerson.attributes objectAtIndex:indexPath.row] isEqualToString:@"email"]){
@@ -185,6 +186,5 @@
     ScheduleViewController *schedule = [[ScheduleViewController alloc] initWithNibName:@"ScheduleViewController" bundle:nil];
     mainDelegate.deckController.centerController = schedule;
 }
-
 
 @end
