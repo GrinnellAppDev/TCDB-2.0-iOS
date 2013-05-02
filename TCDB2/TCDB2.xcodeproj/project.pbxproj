@@ -44,6 +44,15 @@
 		3BD6ACA516712DE60081A227 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD6ACA316712DE50081A227 /* LoginViewController.xib */; };
 		3BDA60F9166D57980072C5AD /* selectedcheckbox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BDA60F7166D57980072C5AD /* selectedcheckbox.jpg */; };
 		3BDA60FA166D57980072C5AD /* notselectedcheckbox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BDA60F8166D57980072C5AD /* notselectedcheckbox.jpg */; };
+		3BEBFBA71732FC5C00B46F44 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEBFB9E1732FC5C00B46F44 /* Icon-Small-50.png */; };
+		3BEBFBA81732FC5C00B46F44 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEBFB9F1732FC5C00B46F44 /* Icon-Small.png */; };
+		3BEBFBA91732FC5C00B46F44 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEBFBA01732FC5C00B46F44 /* Icon-Small@2x.png */; };
+		3BEBFBAC1732FC5C00B46F44 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEBFBA31732FC5C00B46F44 /* iTunesArtwork.png */; };
+		3BEBFBAD1732FC5C00B46F44 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEBFBA41732FC5C00B46F44 /* iTunesArtwork@2x.png */; };
+		3BEBFBAF1732FC8900B46F44 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEBFBAE1732FC8900B46F44 /* Icon.png */; };
+		3BEBFBB11732FC9200B46F44 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEBFBB01732FC9200B46F44 /* Icon@2x.png */; };
+		3BEBFBB31732FC9B00B46F44 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEBFBB21732FC9B00B46F44 /* Icon-72.png */; };
+		3BEBFBB51732FCA200B46F44 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEBFBB41732FCA200B46F44 /* Icon-144.png */; };
 		E177DC6E167A68190067A41F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E177DC6C167A68180067A41F /* ProfileViewController.m */; };
 		E177DC6F167A68190067A41F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E177DC6D167A68180067A41F /* ProfileViewController.xib */; };
 		E1966754167CEA9D00F77BA1 /* default_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = E1966753167CEA9D00F77BA1 /* default_profile.png */; };
@@ -104,6 +113,15 @@
 		3BD6ACA316712DE50081A227 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		3BDA60F7166D57980072C5AD /* selectedcheckbox.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectedcheckbox.jpg; sourceTree = "<group>"; };
 		3BDA60F8166D57980072C5AD /* notselectedcheckbox.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = notselectedcheckbox.jpg; sourceTree = "<group>"; };
+		3BEBFB9E1732FC5C00B46F44 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		3BEBFB9F1732FC5C00B46F44 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		3BEBFBA01732FC5C00B46F44 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		3BEBFBA31732FC5C00B46F44 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		3BEBFBA41732FC5C00B46F44 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		3BEBFBAE1732FC8900B46F44 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		3BEBFBB01732FC9200B46F44 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		3BEBFBB21732FC9B00B46F44 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../Icon-72.png"; sourceTree = "<group>"; };
+		3BEBFBB41732FCA200B46F44 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-144.png"; path = "../Icon-144.png"; sourceTree = "<group>"; };
 		E177DC6B167A68180067A41F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
 		E177DC6C167A68180067A41F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
 		E177DC6D167A68180067A41F /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = ../ProfileViewController.xib; sourceTree = "<group>"; };
@@ -132,6 +150,7 @@
 		3B3E4BA8166A74770099DA35 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3BEBFB9B1732F94000B46F44 /* Icons */,
 				E1966753167CEA9D00F77BA1 /* default_profile.png */,
 				3BDA60F7166D57980072C5AD /* selectedcheckbox.jpg */,
 				3BDA60F8166D57980072C5AD /* notselectedcheckbox.jpg */,
@@ -178,7 +197,6 @@
 			children = (
 				3BD52F2F1667F5AF007AE676 /* AppDelegate */,
 				3BD52F301667F5B9007AE676 /* Helper Classes */,
-				3B3E4BA8166A74770099DA35 /* Images */,
 				3BD6ACA116712DE50081A227 /* LoginViewController.h */,
 				3BD6ACA216712DE50081A227 /* LoginViewController.m */,
 				3BD6ACA316712DE50081A227 /* LoginViewController.xib */,
@@ -209,6 +227,7 @@
 				3BD6AC98167125B50081A227 /* StaticPagesViewController.h */,
 				3BD6AC99167125B50081A227 /* StaticPagesViewController.m */,
 				3BD6AC9A167125B50081A227 /* StaticPagesViewController.xib */,
+				3B3E4BA8166A74770099DA35 /* Images */,
 				3B81D035166700B500AB5269 /* Supporting Files */,
 			);
 			path = TCDB2;
@@ -248,6 +267,22 @@
 				E1FD3711167A6DDC00052A2F /* Person.m */,
 			);
 			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		3BEBFB9B1732F94000B46F44 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				3BEBFBB41732FCA200B46F44 /* Icon-144.png */,
+				3BEBFBB21732FC9B00B46F44 /* Icon-72.png */,
+				3BEBFBB01732FC9200B46F44 /* Icon@2x.png */,
+				3BEBFBAE1732FC8900B46F44 /* Icon.png */,
+				3BEBFB9E1732FC5C00B46F44 /* Icon-Small-50.png */,
+				3BEBFB9F1732FC5C00B46F44 /* Icon-Small.png */,
+				3BEBFBA01732FC5C00B46F44 /* Icon-Small@2x.png */,
+				3BEBFBA31732FC5C00B46F44 /* iTunesArtwork.png */,
+				3BEBFBA41732FC5C00B46F44 /* iTunesArtwork@2x.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +358,15 @@
 				E177DC6F167A68190067A41F /* ProfileViewController.xib in Resources */,
 				E1966754167CEA9D00F77BA1 /* default_profile.png in Resources */,
 				3B75572F169542040098C02D /* EditViewController.xib in Resources */,
+				3BEBFBA71732FC5C00B46F44 /* Icon-Small-50.png in Resources */,
+				3BEBFBA81732FC5C00B46F44 /* Icon-Small.png in Resources */,
+				3BEBFBA91732FC5C00B46F44 /* Icon-Small@2x.png in Resources */,
+				3BEBFBAC1732FC5C00B46F44 /* iTunesArtwork.png in Resources */,
+				3BEBFBAD1732FC5C00B46F44 /* iTunesArtwork@2x.png in Resources */,
+				3BEBFBAF1732FC8900B46F44 /* Icon.png in Resources */,
+				3BEBFBB11732FC9200B46F44 /* Icon@2x.png in Resources */,
+				3BEBFBB31732FC9B00B46F44 /* Icon-72.png in Resources */,
+				3BEBFBB51732FCA200B46F44 /* Icon-144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

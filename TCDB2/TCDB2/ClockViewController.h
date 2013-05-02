@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NSMutableArray *labsArray;
 @property (nonatomic, weak) IBOutlet UITextField *labsField;
 @property (nonatomic, weak) IBOutlet UITextView *commentField;
-@property (nonatomic, weak) IBOutlet UIPickerView *labPicker;
+@property (nonatomic, strong) IBOutlet UIPickerView *labPicker;
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UITextView *activeView;
 @property (nonatomic, weak) IBOutlet UILabel *dateField;
